@@ -963,13 +963,44 @@ header.scrolled {
 
 .prize-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+  border-color: var(--primary-orange);
+  box-shadow: 0 15px 35px rgba(255, 85, 0, 0.08);
 }
 
 .prize-card.champion:hover {
   border-color: var(--primary-orange);
   box-shadow: 0 20px 45px rgba(255, 85, 0, 0.12);
+}
+
+/* Custom floating deal-and-settle animation for prize cards */
+.prize-card.reveal {
+  opacity: 0;
+  transform: translateY(180px) rotate(-4deg) scale(0.92);
+  filter: blur(8px);
+  transition: 
+    opacity 1.3s var(--spring-bezier), 
+    transform 1.3s var(--spring-bezier), 
+    filter 1s ease-out;
+}
+
+.prize-card.reveal:nth-child(1) {
+  transform: translateY(160px) rotate(-5deg) scale(0.92);
+}
+
+.prize-card.reveal:nth-child(2) {
+  transform: translateY(220px) rotate(0deg) scale(0.9);
+  transition-delay: 0.1s;
+}
+
+.prize-card.reveal:nth-child(3) {
+  transform: translateY(160px) rotate(5deg) scale(0.92);
+  transition-delay: 0.2s;
+}
+
+.prize-card.reveal.active {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg) scale(1);
+  filter: blur(0);
 }
 
 .prize-rank-circle {

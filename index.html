@@ -23,7 +23,7 @@
           <path d="M16 6 H10 C5.58 6 2 9.58 2 14 V26 C2 30.42 5.58 34 10 34 H16 C17.1 34 18 33.1 18 32 C18 30.9 17.1 30 16 30 H10 C7.79 30 6 28.21 6 26 V14 C6 11.79 7.79 10 10 10 H16 C17.1 10 18 9.1 18 8 C18 6.9 17.1 6 16 6 Z" fill="#FF5500"/>
           <path d="M23 18 H29 C30.1 18 31 18.9 31 20 C31 21.1 30.1 22 29 22 H23 C21.9 22 21 21.1 21 20 C21 18.9 21.9 18 23 18 Z" fill="#FF5500"/>
           <path d="M34 6 H40 C44.42 6 48 9.58 48 14 V26 C48 30.42 44.42 34 40 34 H34 C32.9 34 32 33.1 32 32 C32 30.9 32.9 30 34 30 H40 C42.21 30 44 28.21 44 26 V14 C44 11.79 42.21 10 40 10 H34 C32.9 10 32 9.1 32 8 C32 6.9 32.9 6 34 6 Z" fill="#FF5500"/>
-          <text x="56" y="26" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">Alibaba Cloud</text>
+          <text x="56" y="26" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#0f172a">Alibaba Cloud</text>
         </svg>
       </a>
     </div>
@@ -41,28 +41,29 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-banner-container">
+  <section class="hero" id="home" style="position: relative; overflow: hidden;">
+    <canvas id="heroParticles" style="position: absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1;"></canvas>
+    <div class="hero-banner-container" style="z-index:0;">
       <img src="assets/hero-banner.jpg" alt="AI Build-athon Hands Intertwining with Glowing Orange Energy Line">
     </div>
-    <span class="badge">Intra-university</span>
-    <h1 class="hero-title">
+    <span class="badge" style="z-index:2; position:relative;">Intra-university</span>
+    <h1 class="hero-title" style="z-index:2; position:relative;">
       <span class="hero-title-main">AI</span><br>
       <span class="gradient-text">Build-athon.</span>
     </h1>
-    <p class="hero-subtitle" style="font-family: var(--font-mono); letter-spacing: 2px; text-transform: uppercase; font-size: 1.5rem; color: var(--primary-orange); margin-bottom: 2rem;">
+    <p class="hero-subtitle" style="font-family: var(--font-mono); letter-spacing: 2px; text-transform: uppercase; font-size: 1.5rem; color: var(--primary-orange); margin-bottom: 2rem; position:relative; z-index:2;">
       Build. Learn. Compete.
     </p>
-    <p class="hero-subtitle" style="margin-top: 0; max-width: 650px; margin-bottom: 3.5rem;">
+    <p class="hero-subtitle" style="margin-top: 0; max-width: 650px; margin-bottom: 3.5rem; position:relative; z-index:2;">
       Co-organized by Alibaba Cloud International and the Department of Industrial Management, Faculty of Science, University of Kelaniya.
     </p>
-    <div class="hero-ctas">
+    <div class="hero-ctas" style="position:relative; z-index:2;">
       <a href="#" class="btn-primary open-portal-btn" data-tab="register">Register Team</a>
       <a href="#about" class="btn-secondary">Explore Details</a>
     </div>
 
     <!-- Countdown Timer -->
-    <div class="countdown-container">
+    <div class="countdown-container" style="position:relative; z-index:2;">
       <div class="countdown-title">Registration Deadline Countdown</div>
       <div class="countdown-grid">
         <div class="countdown-item">

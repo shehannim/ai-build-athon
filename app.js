@@ -618,4 +618,169 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Run session check on start
   checkSession();
+
+  // --- 11. Interactive Hero Canvas Particles (hackX-inspired) ---
+  const initHeroParticles = () => {
+    const canvas = document.getElementById('heroParticles');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let particlesArray = [];
+    const colors = ['#FF5500', '#0ea5e9', '#94a3b8']; // Orange, Cyan, Soft gray
+
+    // Resize handler
+    const resizeCanvas = () => {
+      canvas.width = canvas.parentElement.offsetWidth;
+      canvas.height = canvas.parentElement.offsetHeight;
+    };
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Mouse tracking
+    let mouse = {
+      x: null,
+      y: null,
+      radius: 120
+    };
+
+    const parentSection = canvas.parentElement;
+    parentSection.addEventListener('mousemove', (event) => {
+      const rect = parentSection.getBoundingClientRect();
+      mouse.x = event.clientX - rect.left;
+      mouse.y = event.clientY - rect.top;
+    });
+
+    parentSection.addEventListener('mouseleave', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    // Particle class
+    class Particle {
+      constructor(x, y, directionX, directionY, size, color) {
+        this.x = x;
+        this.y = y;
+        this.directionX = directionX;
+        this.directionY = directionY;
+        this.size = size;
+        this.color = color;
+      }
+      
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+      
+      update() {
+        // Bounce off canvas bounds
+        if (this.x > canvas.width || this.x < 0) {
+          this.directionX = -this.directionX;
+        }
+        if (this.y > canvas.height || this.y < 0) {
+          this.directionY = -this.directionY;
+        }
+
+        // Mouse interaction (pull/push effect)
+        if (mouse.x !== null && mouse.y !== null) {
+          let dx = mouse.x - this.x;
+          let dy = mouse.y - this.y;
+          let distance = Math.sqrt(dx*dx + dy*dy);
+          if (distance < mouse.radius + this.size) {
+            if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
+              this.x += 1.5;
+            }
+            if (mouse.x > this.x && this.x > this.size * 10) {
+              this.x -= 1.5;
+            }
+            if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
+              this.y += 1.5;
+            }
+            if (mouse.y > this.y && this.y > this.size * 10) {
+              this.y -= 1.5;
+            }
+          }
+        }
+
+        this.x += this.directionX;
+        this.y += this.directionY;
+        this.draw();
+      }
+    }
+
+    // Initialize particles array
+    const init = () => {
+      particlesArray = [];
+      const numberOfParticles = Math.floor((canvas.width * canvas.height) / 14000);
+      const limit = Math.min(numberOfParticles, 85);
+      for (let i = 0; i < limit; i++) {
+        let size = Math.random() * 2 + 1;
+        let x = Math.random() * (canvas.width - size * 2) + size;
+        let y = Math.random() * (canvas.height - size * 2) + size;
+        let directionX = (Math.random() * 0.4) - 0.2;
+        let directionY = (Math.random() * 0.4) - 0.2;
+        let color = colors[Math.floor(Math.random() * colors.length)];
+        
+        particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+      }
+    };
+
+    // Draw lines connecting particles
+    const connect = () => {
+      let opacityValue = 1;
+      for (let a = 0; a < particlesArray.length; a++) {
+        for (let b = a; b < particlesArray.length; b++) {
+          let dx = particlesArray[a].x - particlesArray[b].x;
+          let dy = particlesArray[a].y - particlesArray[b].y;
+          let distance = Math.sqrt(dx*dx + dy*dy);
+          
+          if (distance < 80) {
+            opacityValue = 1 - (distance/80);
+            ctx.strokeStyle = `rgba(255, 85, 0, ${opacityValue * 0.25})`; // Soft orange lines
+            ctx.lineWidth = 0.8;
+            ctx.beginPath();
+            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+            ctx.stroke();
+          }
+        }
+
+        // Connect to mouse as well
+        if (mouse.x !== null && mouse.y !== null) {
+          let dx = particlesArray[a].x - mouse.x;
+          let dy = particlesArray[a].y - mouse.y;
+          let distance = Math.sqrt(dx*dx + dy*dy);
+          if (distance < mouse.radius) {
+            opacityValue = 1 - (distance/mouse.radius);
+            ctx.strokeStyle = `rgba(14, 165, 233, ${opacityValue * 0.35})`; // Soft cyan lines from mouse
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+          }
+        }
+      }
+    };
+
+    // Animation Loop
+    const animate = () => {
+      requestAnimationFrame(animate);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+      }
+      connect();
+    };
+
+    init();
+    animate();
+    
+    // Re-init on resize
+    window.addEventListener('resize', init);
+  };
+  
+  initHeroParticles();
 });

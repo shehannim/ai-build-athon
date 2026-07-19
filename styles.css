@@ -957,8 +957,10 @@ header.scrolled {
 }
 
 .prize-card.champion {
-  background: linear-gradient(135deg, rgba(255, 85, 0, 0.08) 0%, rgba(8, 13, 26, 0.9) 100%);
-  border-color: rgba(255, 85, 0, 0.4);
+  background: radial-gradient(circle at top right, rgba(255, 85, 0, 0.08) 0%, rgba(255, 255, 255, 0.9) 100%);
+  border-color: var(--primary-orange);
+  border-width: 2px;
+  box-shadow: 0 10px 30px rgba(255, 85, 0, 0.04);
 }
 
 .prize-card:hover {
@@ -1034,23 +1036,26 @@ header.scrolled {
 }
 
 .rank-1st {
-  background: rgba(255, 85, 0, 0.1);
-  border: 1px solid var(--primary-orange);
-  color: var(--primary-orange);
-  box-shadow: 0 0 15px var(--glow-orange);
+  background: var(--primary-orange);
+  color: #ffffff;
+  border: none;
+  font-weight: 800;
+  box-shadow: 0 4px 15px rgba(255, 85, 0, 0.3);
 }
 
 .rank-2nd {
-  background: rgba(255, 85, 0, 0.1);
-  border: 1px solid var(--primary-blue);
-  color: var(--primary-blue);
-  box-shadow: 0 0 15px var(--glow-blue);
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  font-weight: 800;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.15);
 }
 
 .rank-3rd {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--text-secondary);
-  color: var(--text-primary);
+  background: #e2e8f0;
+  color: #475569;
+  border: none;
+  font-weight: 800;
 }
 
 .prize-name {

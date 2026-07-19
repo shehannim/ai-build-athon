@@ -626,7 +626,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const ctx = canvas.getContext('2d');
     let particlesArray = [];
-    const colors = ['#FF5500', '#0ea5e9', '#94a3b8']; // Orange, Cyan, Soft gray
+    const colors = ['#FF5500', '#FF8800', '#94a3b8']; // Orange, Amber, Soft gray
 
     // Resize handler
     const resizeCanvas = () => {
@@ -753,7 +753,7 @@ document.addEventListener('DOMContentLoaded', () => {
           let distance = Math.sqrt(dx*dx + dy*dy);
           if (distance < mouse.radius) {
             opacityValue = 1 - (distance/mouse.radius);
-            ctx.strokeStyle = `rgba(14, 165, 233, ${opacityValue * 0.35})`; // Soft cyan lines from mouse
+            ctx.strokeStyle = `rgba(255, 136, 0, ${opacityValue * 0.35})`; // Soft orange lines from mouse
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particlesArray[a].x, particlesArray[a].y);

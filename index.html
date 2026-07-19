@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Build-athon | Alibaba Cloud & University of Kelaniya</title>
+  <meta name="description" content="Official registration portal for the AI Build-athon 2026 co-organized by Alibaba Cloud International and University of Kelaniya (Department of Industrial Management). Form teams, build AI prototypes using Qoder, QoderWork & MuleRun, and win big.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Background Glowing Blobs -->
+  <div class="glow-bg"></div>
+  <div class="grid-overlay"></div>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="logo-container" style="display:flex; align-items:center;">
+      <!-- Real Alibaba Cloud SVG Logo -->
+      <a href="#" class="alibaba-logo" aria-label="Alibaba Cloud Logo" style="display:flex; align-items:center;">
+        <svg viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 130px; height: auto; display: block;">
+          <path d="M16 6 H10 C5.58 6 2 9.58 2 14 V26 C2 30.42 5.58 34 10 34 H16 C17.1 34 18 33.1 18 32 C18 30.9 17.1 30 16 30 H10 C7.79 30 6 28.21 6 26 V14 C6 11.79 7.79 10 10 10 H16 C17.1 10 18 9.1 18 8 C18 6.9 17.1 6 16 6 Z" fill="#FF5500"/>
+          <path d="M23 18 H29 C30.1 18 31 18.9 31 20 C31 21.1 30.1 22 29 22 H23 C21.9 22 21 21.1 21 20 C21 18.9 21.9 18 23 18 Z" fill="#FF5500"/>
+          <path d="M34 6 H40 C44.42 6 48 9.58 48 14 V26 C48 30.42 44.42 34 40 34 H34 C32.9 34 32 33.1 32 32 C32 30.9 32.9 30 34 30 H40 C42.21 30 44 28.21 44 26 V14 C44 11.79 42.21 10 40 10 H34 C32.9 10 32 9.1 32 8 C32 6.9 32.9 6 34 6 Z" fill="#FF5500"/>
+          <text x="56" y="26" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">Alibaba Cloud</text>
+        </svg>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#tools">Toolkit</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#prizes">Prizes</a></li>
+      <li><a href="#scoring">Evaluation</a></li>
+    </ul>
+    <div class="menu-btn" id="mobileMenuBtn">
+      <!-- Simple hamburger icon -->
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-banner-container">
+      <img src="assets/hero-banner.jpg" alt="AI Build-athon Hands Intertwining with Glowing Orange Energy Line">
+    </div>
+    <span class="badge">Intra-university</span>
+    <h1 class="hero-title">
+      <span class="hero-title-main">AI</span><br>
+      <span class="gradient-text">Build-athon.</span>
+    </h1>
+    <p class="hero-subtitle" style="font-family: var(--font-mono); letter-spacing: 2px; text-transform: uppercase; font-size: 1.5rem; color: var(--primary-orange); margin-bottom: 2rem;">
+      Build. Learn. Compete.
+    </p>
+    <p class="hero-subtitle" style="margin-top: 0; max-width: 650px; margin-bottom: 3.5rem;">
+      Co-organized by Alibaba Cloud International and the Department of Industrial Management, Faculty of Science, University of Kelaniya.
+    </p>
+    <div class="hero-ctas">
+      <a href="#" class="btn-primary open-portal-btn" data-tab="register">Register Team</a>
+      <a href="#about" class="btn-secondary">Explore Details</a>
+    </div>
+
+    <!-- Countdown Timer -->
+    <div class="countdown-container">
+      <div class="countdown-title">Registration Deadline Countdown</div>
+      <div class="countdown-grid">
+        <div class="countdown-item">
+          <span class="countdown-value" id="days">00</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-value" id="hours">00</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-value" id="minutes">00</span>
+          <span class="countdown-label">Mins</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-value" id="seconds">00</span>
+          <span class="countdown-label">Secs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Quick Facts Section -->
+  <section class="quick-facts" id="about">
+    <div class="about-container">
+      <div class="about-left">
+        <div class="reveal" style="margin-bottom: 3rem;">
+          <span class="section-label">Overview</span>
+          <h2 class="section-title">An online sprint to ship AI-powered solutions</h2>
+          <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8;">
+            Alibaba Cloud International invites the Department of Industrial Management, Faculty of Science, University of Kelaniya, students for a three-week, fully online AI Hackathon. Over 14 days, you'll learn the latest AI tooling, form a small team, and ship a working prototype that solves a real-world problem in any industry. Whether your idea is a video-generator, mobile app, enterprise database, or public portal, if AI sits at its core, it belongs here.
+          </p>
+        </div>
+
+        <div class="facts-grid">
+          <!-- Card 1 -->
+          <div class="fact-card reveal stagger-1">
+            <div class="fact-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+            </div>
+            <h3 class="fact-title">Format</h3>
+            <p class="fact-desc">Conducted entirely online with mentorship workshops.</p>
+            <div class="fact-value">100% Online</div>
+          </div>
+          <!-- Card 2 -->
+          <div class="fact-card reveal stagger-2">
+            <div class="fact-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            </div>
+            <h3 class="fact-title">Team Size</h3>
+            <p class="fact-desc">Build alone or collaborate in groups of up to three.</p>
+            <div class="fact-value">1 – 3 Builders</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Interactive Glowing Neural Net SVG -->
+      <div class="about-right reveal stagger-3">
+        <div class="interactive-tech-container" id="interactiveTechContainer" style="width: 100%; max-width: 380px; margin: 0 auto; transition: transform 0.1s ease-out;">
+          <svg viewBox="0 0 400 400" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="glowGradBlue" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="var(--primary-blue)" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="var(--primary-blue)" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="glowGradOrange" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="var(--primary-orange)" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="var(--primary-orange)" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <!-- Glowing background bubbles -->
+            <circle cx="200" cy="200" r="100" fill="url(#glowGradBlue)"/>
+            <circle cx="200" cy="200" r="150" fill="url(#glowGradOrange)"/>
+            
+            <!-- Radar circles -->
+            <circle cx="200" cy="200" r="160" stroke="rgba(0, 229, 255, 0.15)" stroke-width="1" stroke-dasharray="10 15"/>
+            <circle cx="200" cy="200" r="110" stroke="rgba(255, 85, 0, 0.15)" stroke-width="1.5" stroke-dasharray="5 5"/>
+            <circle cx="200" cy="200" r="60" stroke="rgba(0, 229, 255, 0.2)" stroke-width="1"/>
+            
+            <!-- Crosshairs -->
+            <path d="M200 20 V380 M20 200 H380" stroke="rgba(0, 229, 255, 0.08)" stroke-width="1.2" stroke-dasharray="6 8"/>
+            
+            <!-- Neural Connection Lines -->
+            <g stroke-width="1.5" opacity="0.6">
+              <line x1="200" y1="200" x2="110" y2="120" stroke="var(--primary-orange)"/>
+              <line x1="200" y1="200" x2="290" y2="120" stroke="var(--primary-orange)"/>
+              <line x1="200" y1="200" x2="200" y2="300" stroke="var(--primary-blue)"/>
+              <line x1="110" y1="120" x2="70" y2="200" stroke="var(--primary-blue)"/>
+              <line x1="110" y1="120" x2="140" y2="70" stroke="var(--primary-blue)"/>
+              <line x1="290" y1="120" x2="330" y2="200" stroke="var(--primary-orange)"/>
+              <line x1="290" y1="120" x2="260" y2="70" stroke="var(--primary-blue)"/>
+              <line x1="200" y1="300" x2="120" y2="340" stroke="var(--primary-blue)"/>
+              <line x1="200" y1="300" x2="280" y2="340" stroke="var(--primary-orange)"/>
+            </g>
+            
+            <!-- Core Node -->
+            <circle cx="200" cy="200" r="14" fill="var(--primary-orange)"/>
+            <circle cx="200" cy="200" r="28" stroke="var(--primary-orange)" stroke-width="2" stroke-dasharray="14 4"/>
+            
+            <!-- Secondary Nodes -->
+            <circle cx="110" cy="120" r="7" fill="#fff" stroke="var(--primary-orange)" stroke-width="2"/>
+            <circle cx="290" cy="120" r="7" fill="#fff" stroke="var(--primary-orange)" stroke-width="2"/>
+            <circle cx="200" cy="300" r="7" fill="#fff" stroke="var(--primary-blue)" stroke-width="2"/>
+            
+            <!-- Minor Nodes -->
+            <circle cx="70" cy="200" r="4.5" fill="var(--primary-blue)"/>
+            <circle cx="140" cy="70" r="4.5" fill="var(--primary-blue)"/>
+            <circle cx="330" cy="200" r="4.5" fill="var(--primary-orange)"/>
+            <circle cx="260" cy="70" r="4.5" fill="var(--primary-blue)"/>
+            <circle cx="120" cy="340" r="4.5" fill="var(--primary-blue)"/>
+            <circle cx="280" cy="340" r="4.5" fill="var(--primary-orange)"/>
+            
+            <!-- Cyber Target Borders -->
+            <path d="M 15 35 L 15 15 L 35 15" stroke="var(--primary-blue)" stroke-width="2"/>
+            <path d="M 385 35 L 385 15 L 365 15" stroke="var(--primary-blue)" stroke-width="2"/>
+            <path d="M 15 365 L 15 385 L 35 385" stroke="var(--primary-blue)" stroke-width="2"/>
+            <path d="M 385 365 L 385 385 L 365 385" stroke="var(--primary-blue)" stroke-width="2"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toolkit Section (Tools to Learn & Use) -->
+  <section class="toolkit" id="tools">
+    <div style="text-align: center; margin-bottom: 4rem;" class="reveal">
+      <span class="section-label">Resources</span>
+      <h2 class="section-title">The three developer tools you will master</h2>
+      <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+        Leverage official Alibaba Cloud developer suites to write code, design agent actions, and compile API endpoints.
+      </p>
+    </div>
+
+    <div class="toolkit-grid">
+      <!-- Qoder Card -->
+      <div class="tool-card reveal stagger-1">
+        <div class="tool-header">
+          <div class="tool-badge-circle">Q</div>
+          <div class="tool-header-info">
+            <h3>Qoder</h3>
+            <span>Agentic IDE</span>
+          </div>
+        </div>
+        <div class="tool-body">
+          <p>
+            An AI-native developer portal, CLI interface, and JetBrains utility. Write, refactor, and test applications securely using Quest Mode, Experts engine, and spec-driven structures.
+          </p>
+          <div class="tool-footer-tag">Real Software Development</div>
+        </div>
+      </div>
+
+      <!-- QoderWork Card -->
+      <div class="tool-card reveal stagger-2">
+        <div class="tool-header">
+          <div class="tool-badge-circle">QW</div>
+          <div class="tool-header-info">
+            <h3>QoderWork</h3>
+            <span>Desktop AI Agent</span>
+          </div>
+        </div>
+        <div class="tool-body">
+          <p>
+            Automate desktop and code tasks on the fly. Plan, execute, edit files, script browsers, and coordinate modular workflows in an isolated sandbox tailored for multi-step task resolution.
+          </p>
+          <div class="tool-footer-tag">Provided to all Teams</div>
+        </div>
+      </div>
+
+      <!-- MuleRun Card -->
+      <div class="tool-card reveal stagger-3">
+        <div class="tool-header">
+          <div class="tool-badge-circle">M</div>
+          <div class="tool-header-info">
+            <h3>MuleRun</h3>
+            <span>AI Workflow Runtime</span>
+          </div>
+        </div>
+        <div class="tool-body">
+          <p>
+            Instantly run, scale, and publish workflow networks. Connect complex APIs, models, databases, and structured inputs into robust, shareable environments.
+          </p>
+          <div class="tool-footer-tag">Cloud Credits Available</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Timeline Roadmap Section -->
+  <section class="roadmap" id="timeline">
+    <div style="max-width: 800px; margin-bottom: 4rem;" class="reveal">
+      <span class="section-label">Timeline</span>
+      <h2 class="section-title">Three-Week Roadmap & Key Dates</h2>
+    </div>
+
+    <div class="timeline-container">
+      <div class="timeline-bar">
+        <div class="timeline-progress" id="timelineProgress">
+          <div class="timeline-progress-laser" id="timelineLaser">
+            <div class="timeline-laser-tail" id="timelineLaserTail"></div>
+            <div class="timeline-laser-core"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Item 1 -->
+      <div class="timeline-item reveal" data-phase="1">
+        <div class="timeline-dot-wrapper">
+          <span class="timeline-phase">01</span>
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-content-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
+            <div class="timeline-date" style="margin-bottom:0;">July 20, 2026</div>
+            <div class="tech-status" style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:1px; color:var(--text-muted);">[ STATUS: INACTIVE ]</div>
+          </div>
+          <h3 class="timeline-title">Registration Opens</h3>
+          <ul class="timeline-details">
+            <li>Portal officially live for form entries and account creations</li>
+            <li>Define team roster (1-3 members)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Timeline Item 2 -->
+      <div class="timeline-item reveal" data-phase="2">
+        <div class="timeline-dot-wrapper">
+          <span class="timeline-phase">02</span>
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-content-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
+            <div class="timeline-date" style="margin-bottom:0;">August 10, 2026</div>
+            <div class="tech-status" style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:1px; color:var(--text-muted);">[ STATUS: INACTIVE ]</div>
+          </div>
+          <h3 class="timeline-title">Registration Deadline</h3>
+          <ul class="timeline-details">
+            <li>Roster locks. No new profiles or members accepted after midnight</li>
+            <li>Workspace and tooling credentials dispatched</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Timeline Item 3 -->
+      <div class="timeline-item reveal" data-phase="3">
+        <div class="timeline-dot-wrapper">
+          <span class="timeline-phase">03</span>
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-content-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
+            <div class="timeline-date" style="margin-bottom:0;">August 10 – 14, 2026</div>
+            <div class="tech-status" style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:1px; color:var(--text-muted);">[ STATUS: INACTIVE ]</div>
+          </div>
+          <h3 class="timeline-title">Hackathon Kick-Off Session (2 Hr)</h3>
+          <ul class="timeline-details">
+            <li>Official Alibaba Cloud introductory seminar</li>
+            <li>Training labs on Qoder, QoderWork & MuleRun</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Timeline Item 4 -->
+      <div class="timeline-item reveal" data-phase="4">
+        <div class="timeline-dot-wrapper">
+          <span class="timeline-phase">04</span>
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-content-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
+            <div class="timeline-date" style="margin-bottom:0;">August 14 – 27, 2026</div>
+            <div class="tech-status" style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:1px; color:var(--text-muted);">[ STATUS: INACTIVE ]</div>
+          </div>
+          <h3 class="timeline-title">Submission Window Open (2 Weeks)</h3>
+          <ul class="timeline-details">
+            <li>Build models, compile source repo, record walk-through demo video</li>
+            <li>Direct mentorship check-ins with Alibaba experts</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Timeline Item 5 -->
+      <div class="timeline-item reveal" data-phase="5">
+        <div class="timeline-dot-wrapper">
+          <span class="timeline-phase">05</span>
+          <div class="timeline-dot"></div>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-content-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
+            <div class="timeline-date" style="margin-bottom:0;">September 1 – 15, 2026</div>
+            <div class="tech-status" style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:1px; color:var(--text-muted);">[ STATUS: INACTIVE ]</div>
+          </div>
+          <h3 class="timeline-title">Evaluation & Final Pitching Session</h3>
+          <ul class="timeline-details">
+            <li>Top 5-8 finalist teams announced</li>
+            <li>Live pitching presentation (Video conference / physical auditorium)</li>
+            <li>Winner announcement and award ceremony</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prizes Section -->
+  <section class="prizes" id="prizes">
+    <div style="text-align: center; margin-bottom: 2rem;" class="reveal">
+      <span class="section-label">Rewards</span>
+      <h2 class="section-title">Prizes & Global Certification</h2>
+    </div>
+
+    <div class="prizes-grid">
+      <!-- 2nd Place -->
+      <div class="prize-card reveal stagger-2">
+        <div>
+          <div class="prize-rank-circle rank-2nd">2nd</div>
+          <h3 class="prize-name">1st Runner's Up</h3>
+          <p class="prize-sub">Second Place Overall</p>
+        </div>
+        <div>
+          <div class="prize-value">$800</div>
+          <ul class="prize-benefits">
+            <li>Alibaba Cloud Certificate</li>
+            <li>Cloud platform credits</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 1st Place (Featured) -->
+      <div class="prize-card champion reveal stagger-1">
+        <div>
+          <div class="prize-rank-circle rank-1st">1st</div>
+          <h3 class="prize-name">Grand Prize</h3>
+          <p class="prize-sub">Winner Overall</p>
+        </div>
+        <div>
+          <div class="prize-value" style="font-size: 2.6rem;">$1000</div>
+          <ul class="prize-benefits">
+            <li>Alibaba Cloud Official Certificate</li>
+            <li>Direct showcase to Alibaba Cloud International</li>
+            <li>Internship and project grant pathways</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3rd Place -->
+      <div class="prize-card reveal stagger-3">
+        <div>
+          <div class="prize-rank-circle rank-3rd">3rd</div>
+          <h3 class="prize-name">2nd Runner's Up</h3>
+          <p class="prize-sub">Third Place Overall</p>
+        </div>
+        <div>
+          <div class="prize-value">$500</div>
+          <ul class="prize-benefits">
+            <li>Alibaba Cloud Certificate</li>
+            <li>Cloud platform credits</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accordion Score System Section -->
+  <section class="scoring" id="scoring">
+    <div style="max-width: 800px; margin: 0 auto 3rem; text-align: center;" class="reveal">
+      <span class="section-label">Evaluation</span>
+      <h2 class="section-title">How projects will be scored</h2>
+      <p style="color: var(--text-secondary);">
+        Submissions are evaluated out of 100 total points across five fundamental benchmarks.
+      </p>
+    </div>
+
+    <div class="scoring-container reveal">
+      <!-- Criteria 1 -->
+      <div class="score-accordion-item">
+        <div class="score-accordion-header">
+          <div class="score-header-left">
+            <div class="score-pct-badge">25%</div>
+            <div class="score-title-text">
+              <h4>Use of AI</h4>
+            </div>
+          </div>
+          <div class="score-arrow">&#9662;</div>
+        </div>
+        <div class="score-accordion-content">
+          <p>
+            Depth, design, and consistency of the Artificial Intelligence deployment. We examine the logic, complexity, and how central AI automation is to the core problem resolution.
+          </p>
+        </div>
+      </div>
+
+      <!-- Criteria 2 -->
+      <div class="score-accordion-item">
+        <div class="score-accordion-header">
+          <div class="score-header-left">
+            <div class="score-pct-badge">20%</div>
+            <div class="score-title-text">
+              <h4>Innovation & Originality</h4>
+            </div>
+          </div>
+          <div class="score-arrow">&#9662;</div>
+        </div>
+        <div class="score-accordion-content">
+          <p>
+            Is the solution fresh and original? Does it tackle a real-world problem in an ingenious, unexpected way that sets it apart from traditional structures?
+          </p>
+        </div>
+      </div>
+
+      <!-- Criteria 3 -->
+      <div class="score-accordion-item">
+        <div class="score-accordion-header">
+          <div class="score-header-left">
+            <div class="score-pct-badge">20%</div>
+            <div class="score-title-text">
+              <h4>Technical Execution</h4>
+            </div>
+          </div>
+          <div class="score-arrow">&#9662;</div>
+        </div>
+        <div class="score-accordion-content">
+          <p>
+            Quality of source code, robustness, application stability, modular code patterns, and the integration layout of Qoder, QoderWork, or MuleRun.
+          </p>
+        </div>
+      </div>
+
+      <!-- Criteria 4 -->
+      <div class="score-accordion-item">
+        <div class="score-accordion-header">
+          <div class="score-header-left">
+            <div class="score-pct-badge">20%</div>
+            <div class="score-title-text">
+              <h4>Impact & Feasibility</h4>
+            </div>
+          </div>
+          <div class="score-arrow">&#9662;</div>
+        </div>
+        <div class="score-accordion-content">
+          <p>
+            Commercial value, target audience relevance, deployment scale, usability, and the validation of a credible path to a real product launch.
+          </p>
+        </div>
+      </div>
+
+      <!-- Criteria 5 -->
+      <div class="score-accordion-item">
+        <div class="score-accordion-header">
+          <div class="score-header-left">
+            <div class="score-pct-badge">15%</div>
+            <div class="score-title-text">
+              <h4>Pitch & Demo Presentation</h4>
+            </div>
+          </div>
+          <div class="score-arrow">&#9662;</div>
+        </div>
+        <div class="score-accordion-content">
+          <p>
+            Clarity, pacing, story structure, problem framing, product demo quality, and persuasive styling in the 3-minute video presentation and final slide deck.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Login/Register Floating Modal Portal -->
+  <div class="portal-modal" id="portalModal">
+    <div class="portal-card">
+      <button class="close-portal-btn" id="closePortalBtn" aria-label="Close modal">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13.5 4.5l-9 9m0-9l9 9"/></svg>
+      </button>
+
+      <div class="portal-tabs">
+        <div class="portal-tab active" id="tabLogin">Sign In</div>
+        <div class="portal-tab" id="tabRegister">Create Team</div>
+      </div>
+
+      <!-- LOGIN PANE -->
+      <div class="portal-pane active" id="paneLogin">
+        <h3 class="portal-title">Welcome Back</h3>
+        <p class="portal-sub">Access your AI Build-athon dashboard portal</p>
+        
+        <div class="form-message" id="loginMsg"></div>
+
+        <form id="loginForm">
+          <div class="form-group">
+            <label class="form-label" for="loginEmail">Student Email</label>
+            <input type="email" id="loginEmail" class="form-input" placeholder="student@kln.ac.lk" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="submit-btn">
+            <span id="loginBtnText">Sign In</span>
+            <div class="loading-spinner" id="loginSpinner"></div>
+          </button>
+        </form>
+      </div>
+
+      <!-- REGISTER PANE -->
+      <div class="portal-pane" id="paneRegister">
+        <div id="registerSuccessOverlay" class="success-overlay">
+          <div class="checkmark-circle">
+            <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h3 class="portal-title" style="color: #10b981;">Roster Registered!</h3>
+          <p class="portal-sub" style="margin-bottom:0.5rem;">Congratulations, team <strong id="successTeamName" style="color:#fff;"></strong>!</p>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">Your credentials have been securely stored in Supabase. Check your inbox for confirmation updates.</p>
+        </div>
+
+        <div id="registerFormContent">
+          <h3 class="portal-title">Join the AI Sprint</h3>
+          <p class="portal-sub">Set up your team and student profile</p>
+
+          <div class="form-message" id="registerMsg"></div>
+
+          <form id="registerForm">
+            <!-- Part 1: Primary Lead details -->
+            <div class="form-group">
+              <label class="form-label" for="regName">Full Name (Lead Builder)</label>
+              <input type="text" id="regName" class="form-input" placeholder="Dilshan Perera" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="regEmail">Student Email</label>
+                <input type="email" id="regEmail" class="form-input" placeholder="dilshan@kln.ac.lk" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="regPassword">Password</label>
+                <input type="password" id="regPassword" class="form-input" placeholder="••••••••" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="regStudentId">Student ID / Reg No</label>
+                <input type="text" id="regStudentId" class="form-input" placeholder="IM/2022/xxx" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="regFaculty">Faculty</label>
+                <select id="regFaculty" class="form-input" required style="background: rgba(3, 7, 18, 0.8);">
+                  <option value="" disabled selected>Select Faculty</option>
+                  <option value="Faculty of Commerce & Management Studies">Faculty of Commerce & Management Studies</option>
+                  <option value="Faculty of Computing and Technology">Faculty of Computing and Technology</option>
+                  <option value="Faculty of Humanities">Faculty of Humanities</option>
+                  <option value="Faculty of Medicine">Faculty of Medicine</option>
+                  <option value="Faculty of Science">Faculty of Science</option>
+                  <option value="Faculty of Social Sciences">Faculty of Social Sciences</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="regDept">Department</label>
+                <select id="regDept" class="form-input" required style="background: rgba(3, 7, 18, 0.8);" disabled>
+                  <option value="" disabled selected>Select Faculty First</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="regYear">Year of Study</label>
+                <select id="regYear" class="form-input" required style="background: rgba(3, 7, 18, 0.8);">
+                  <option value="1st Year">1st Year</option>
+                  <option value="2nd Year">2nd Year</option>
+                  <option value="3rd Year">3rd Year</option>
+                  <option value="4th Year">4th Year</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Part 2: Team details -->
+            <div class="form-row" style="margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1.5rem;">
+              <div class="form-group">
+                <label class="form-label" for="regTeamName">Team Name</label>
+                <input type="text" id="regTeamName" class="form-input" placeholder="ByteForce" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Team Size</label>
+                <div class="segmented-control">
+                  <button type="button" class="segment-btn active" data-size="1">1</button>
+                  <button type="button" class="segment-btn" data-size="2">2</button>
+                  <button type="button" class="segment-btn" data-size="3">3</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Container for extra team member fields -->
+            <div id="memberFieldsContainer"></div>
+
+            <!-- Part 3: Tool selection -->
+            <div class="form-group" style="margin-top: 1.25rem;">
+              <label class="form-label">Interested Developer Tools</label>
+              <div class="tool-checklist">
+                <div class="tool-checkbox">
+                  <input type="checkbox" id="toolQoder" value="Qoder" checked>
+                  <label for="toolQoder" class="tool-check-label">Qoder</label>
+                </div>
+                <div class="tool-checkbox">
+                  <input type="checkbox" id="toolQoderWork" value="QoderWork">
+                  <label for="toolQoderWork" class="tool-check-label">QoderWork</label>
+                </div>
+                <div class="tool-checkbox">
+                  <input type="checkbox" id="toolMuleRun" value="MuleRun">
+                  <label for="toolMuleRun" class="tool-check-label">MuleRun</label>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="submit-btn" style="margin-top: 2rem;">
+              <span id="registerBtnText">Register Team</span>
+              <div class="loading-spinner" id="registerSpinner"></div>
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logos" style="display:flex; justify-content:center; align-items:center; gap:2.5rem; flex-wrap:wrap; margin-bottom: 2rem;">
+        <!-- Real Alibaba Cloud SVG Logo -->
+        <span class="logo-item" style="display:flex; align-items:center;">
+          <svg viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: 25px; width: auto; display: block;">
+            <path d="M16 6 H10 C5.58 6 2 9.58 2 14 V26 C2 30.42 5.58 34 10 34 H16 C17.1 34 18 33.1 18 32 C18 30.9 17.1 30 16 30 H10 C7.79 30 6 28.21 6 26 V14 C6 11.79 7.79 10 10 10 H16 C17.1 10 18 9.1 18 8 C18 6.9 17.1 6 16 6 Z" fill="#FF5500"/>
+            <path d="M23 18 H29 C30.1 18 31 18.9 31 20 C31 21.1 30.1 22 29 22 H23 C21.9 22 21 21.1 21 20 C21 18.9 21.9 18 23 18 Z" fill="#FF5500"/>
+            <path d="M34 6 H40 C44.42 6 48 9.58 48 14 V26 C48 30.42 44.42 34 40 34 H34 C32.9 34 32 33.1 32 32 C32 30.9 32.9 30 34 30 H40 C42.21 30 44 28.21 44 26 V14 C44 11.79 42.21 10 40 10 H34 C32.9 10 32 9.1 32 8 C32 6.9 32.9 6 34 6 Z" fill="#FF5500"/>
+            <text x="56" y="26" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">Alibaba Cloud</text>
+          </svg>
+        </span>
+        <div class="logo-separator" style="height:20px; width:1px; background:rgba(255,255,255,0.15); margin:0;"></div>
+        <!-- UOK Crest Logo (Wikipedia Accurate) -->
+        <span class="logo-item" title="University of Kelaniya" style="display:flex; align-items:center; gap:0.6rem;">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: 35px; width: auto;">
+            <defs>
+              <path id="footPetalL" d="M 100 56 C 86 70, 82 86, 100 100 C 118 86, 114 70, 100 56 Z" fill="#FFC72C" stroke="#7A1C1C" stroke-width="1.8"/>
+              <path id="footPetalM" d="M 100 70 C 89 80, 86 92, 100 100 C 114 92, 111 80, 100 70 Z" fill="#FFC72C" stroke="#7A1C1C" stroke-width="1.4"/>
+              <path id="footPetalS" d="M 100 82 C 92 88, 90 95, 100 100 C 110 95, 108 88, 100 82 Z" fill="#FFC72C" stroke="#7A1C1C" stroke-width="1"/>
+              <path id="footPathTop" d="M 23 100 A 77 77 0 1 1 177 100" fill="none"/>
+              <path id="footPathBottom" d="M 177 100 A 77 77 0 0 1 23 100" fill="none"/>
+            </defs>
+            <circle cx="100" cy="100" r="96" fill="#FFC72C" stroke="#7A1C1C" stroke-width="2.5"/>
+            <circle cx="100" cy="100" r="92" stroke="#7A1C1C" stroke-width="1"/>
+            <circle cx="100" cy="100" r="70" stroke="#7A1C1C" stroke-width="1.2"/>
+            <circle cx="100" cy="100" r="54" stroke="#7A1C1C" stroke-width="1.2"/>
+            <circle cx="100" cy="100" r="66" stroke="#7A1C1C" stroke-width="0.75" stroke-dasharray="10 6"/>
+            <circle cx="100" cy="100" r="62" stroke="#7A1C1C" stroke-width="0.75" stroke-dasharray="6 10"/>
+            <circle cx="100" cy="100" r="58" stroke="#7A1C1C" stroke-width="0.75" stroke-dasharray="8 8"/>
+            <circle cx="100" cy="100" r="48" stroke="#7A1C1C" stroke-width="2" fill="#FFC72C"/>
+            <use href="#footPetalL"/>
+            <use href="#footPetalL" transform="rotate(45 100 100)"/>
+            <use href="#footPetalL" transform="rotate(90 100 100)"/>
+            <use href="#footPetalL" transform="rotate(135 100 100)"/>
+            <use href="#footPetalL" transform="rotate(180 100 100)"/>
+            <use href="#footPetalL" transform="rotate(225 100 100)"/>
+            <use href="#footPetalL" transform="rotate(270 100 100)"/>
+            <use href="#footPetalL" transform="rotate(315 100 100)"/>
+            <use href="#footPetalM" transform="rotate(22.5 100 100)"/>
+            <use href="#footPetalM" transform="rotate(67.5 100 100)"/>
+            <use href="#footPetalM" transform="rotate(112.5 100 100)"/>
+            <use href="#footPetalM" transform="rotate(157.5 100 100)"/>
+            <use href="#footPetalM" transform="rotate(202.5 100 100)"/>
+            <use href="#footPetalM" transform="rotate(247.5 100 100)"/>
+            <use href="#footPetalM" transform="rotate(292.5 100 100)"/>
+            <use href="#footPetalM" transform="rotate(337.5 100 100)"/>
+            <use href="#footPetalS"/>
+            <use href="#footPetalS" transform="rotate(45 100 100)"/>
+            <use href="#headPetalS" transform="rotate(90 100 100)"/>
+            <use href="#footPetalS" transform="rotate(135 100 100)"/>
+            <use href="#footPetalS" transform="rotate(180 100 100)"/>
+            <use href="#footPetalS" transform="rotate(225 100 100)"/>
+            <use href="#footPetalS" transform="rotate(270 100 100)"/>
+            <use href="#footPetalS" transform="rotate(315 100 100)"/>
+            <circle cx="100" cy="100" r="10" fill="#FFC72C" stroke="#7A1C1C" stroke-width="1.2"/>
+            <circle cx="100" cy="100" r="2.5" fill="#7A1C1C"/>
+            <circle cx="100" cy="95" r="1" fill="#7A1C1C"/>
+            <circle cx="100" cy="105" r="1" fill="#7A1C1C"/>
+            <circle cx="95" cy="100" r="1" fill="#7A1C1C"/>
+            <circle cx="105" cy="100" r="1" fill="#7A1C1C"/>
+            <circle cx="96.5" cy="96.5" r="1" fill="#7A1C1C"/>
+            <circle cx="103.5" cy="103.5" r="1" fill="#7A1C1C"/>
+            <circle cx="96.5" cy="103.5" r="1" fill="#7A1C1C"/>
+            <circle cx="103.5" cy="96.5" r="1" fill="#7A1C1C"/>
+            <text fill="#7A1C1C" font-family="'Noto Sans Sinhala', 'Space Grotesk', sans-serif" font-size="11" font-weight="800">
+              <textPath href="#footPathTop" startOffset="50%" text-anchor="middle">පඤ්ඤාය පරිසුජ්ඣති   •   කැලණිය විශ්වවිද්‍යාලය</textPath>
+            </text>
+            <text fill="#7A1C1C" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="900" letter-spacing="0.5">
+              <textPath href="#footPathBottom" startOffset="50%" text-anchor="middle">UNIVERSITY OF KELANIYA</textPath>
+            </text>
+          </svg>
+          <span style="font-family: var(--font-heading); font-weight:700; font-size:0.85rem; color:#fff; letter-spacing:0.5px;">University of Kelaniya</span>
+        </span>
+        <div class="logo-separator" style="height:20px; width:1px; background:rgba(255,255,255,0.15); margin:0;"></div>
+        <!-- IMSSA Logo (Accurate) -->
+        <span class="logo-item" title="IMSSA" style="display:flex; align-items:center;">
+          <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: 35px; width: auto;">
+            <defs>
+              <radialGradient id="imssaGlobeGlowFoot" cx="35%" cy="35%" r="65%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15"/>
+                <stop offset="60%" stop-color="#ffffff" stop-opacity="0.02"/>
+                <stop offset="100%" stop-color="#000000" stop-opacity="0.4"/>
+              </radialGradient>
+              <path id="globeTopTextPathFoot" d="M 10 35 A 28 28 0 0 1 66 35" fill="none"/>
+            </defs>
+            <rect x="42" y="28" width="30" height="30" fill="#3BB2B8" rx="1"/>
+            <circle cx="38" cy="31" r="24" fill="rgba(255, 255, 255, 0.05)" stroke="#FFFFFF" stroke-width="1.2"/>
+            <circle cx="38" cy="31" r="24" fill="url(#imssaGlobeGlowFoot)"/>
+            <ellipse cx="38" cy="31" rx="8" ry="24" stroke="rgba(255, 255, 255, 0.35)" stroke-width="0.8" fill="none"/>
+            <ellipse cx="38" cy="31" rx="16" ry="24" stroke="rgba(255, 255, 255, 0.2)" stroke-width="0.8" fill="none"/>
+            <line x1="38" y1="7" x2="38" y2="55" stroke="rgba(255, 255, 255, 0.35)" stroke-width="0.8"/>
+            <ellipse cx="38" cy="31" rx="24" ry="8" stroke="rgba(255, 255, 255, 0.35)" stroke-width="0.8" fill="none"/>
+            <ellipse cx="38" cy="31" rx="24" ry="16" stroke="rgba(255, 255, 255, 0.2)" stroke-width="0.8" fill="none"/>
+            <line x1="14" y1="31" x2="62" y2="31" stroke="rgba(255, 255, 255, 0.35)" stroke-width="0.8"/>
+            <text fill="#FFFFFF" font-family="'Manrope', sans-serif" font-size="2.6" font-weight="700" letter-spacing="0.1">
+              <textPath href="#globeTopTextPathFoot" startOffset="50%" text-anchor="middle">
+                INDUSTRIAL MANAGEMENT SCIENCE STUDENTS' ASSOCIATION
+              </textPath>
+            </text>
+            <text x="18" y="52" font-family="'Georgia', serif" font-size="20" font-weight="bold" font-style="italic" fill="#FFFFFF">imssa</text>
+          </svg>
+        </span>
+        <div class="logo-separator" style="height:20px; width:1px; background:rgba(255,255,255,0.15); margin:0;"></div>
+        <!-- MIT / IT Department Badge (Accurate) -->
+        <span class="logo-item" title="Department of Industrial Management" style="display:flex; align-items:center;">
+          <svg viewBox="0 0 180 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: 32px; width: auto;">
+            <rect x="1" y="1" width="178" height="68" rx="8" fill="#FFFFFF" stroke="#000000" stroke-width="2"/>
+            <path d="M 8 1 H 100 L 90 69 H 8 A 7 7 0 0 1 1 62 V 8 A 7 7 0 0 1 8 1 Z" fill="#000000"/>
+            <text x="12" y="42" font-family="'Space Grotesk', sans-serif" font-size="34" font-weight="900" fill="#FFFFFF">MIT</text>
+            <text x="12" y="58" font-family="'Manrope', sans-serif" font-size="5.5" font-weight="700" fill="#FFFFFF" letter-spacing="0.2">B.Sc. IN MANAGEMENT &amp; IT</text>
+            <text x="115" y="42" font-family="'Space Grotesk', sans-serif" font-size="34" font-weight="900" fill="#000000">IT</text>
+            <text x="108" y="58" font-family="'Manrope', sans-serif" font-size="5.5" font-weight="700" fill="#000000" letter-spacing="0.2">B.Sc. IN INFORMATION TECH</text>
+          </svg>
+        </span>
+      </div>
+      <p class="footer-orgs">
+        Organized by the Industrial Management Science Students' Association (IMSSA)<br>
+        Department of Industrial Management · Faculty of Science<br>
+        University of Kelaniya, Sri Lanka
+      </p>
+      <p class="footer-credits">
+        &copy; 2026 AI Build-athon. Powered by Alibaba Cloud International. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Load Supabase Library from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- Supabase Config & Client Initialization -->
+  <script src="supabase-config.js"></script>
+  
+  <!-- Website Interactions and Operations -->
+  <script src="app.js"></script>
+</body>
+</html>

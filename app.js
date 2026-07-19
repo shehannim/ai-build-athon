@@ -1,0 +1,621 @@
+document.addEventListener('DOMContentLoaded', () => {
+  // --- Faculty & Department Dynamic Data ---
+  const facultyDeptData = {
+    "Faculty of Commerce & Management Studies": [
+      "Department of Accountancy",
+      "Department of Commerce & Financial Management",
+      "Department of Finance",
+      "Department of Human Resource Management",
+      "Department of Marketing Management",
+      "Other"
+    ],
+    "Faculty of Computing and Technology": [
+      "Department of Computer Systems Engineering",
+      "Department of Industrial Management Technology",
+      "Department of Software Engineering",
+      "Other"
+    ],
+    "Faculty of Humanities": [
+      "Department of English",
+      "Department of English Language Teaching (DELT)",
+      "Department of Fine Arts",
+      "Department of Hindi Studies",
+      "Department of Linguistics",
+      "Department of Modern Languages",
+      "Department of Pali & Buddhist Studies",
+      "Department of Sanskrit & Eastern Studies",
+      "Department of Sinhala",
+      "Department of Western Classical Culture & Christian Culture",
+      "Other"
+    ],
+    "Faculty of Medicine": [
+      "Department of Anatomy",
+      "Department of Biochemistry & Clinical Chemistry",
+      "Department of Community Medicine",
+      "Department of Family Medicine",
+      "Department of Forensic Medicine",
+      "Department of Medical Education",
+      "Department of Medicine",
+      "Department of Medical Microbiology",
+      "Department of Obstetrics & Gynaecology",
+      "Department of Paediatrics",
+      "Department of Parasitology",
+      "Department of Pathology",
+      "Department of Pharmacology",
+      "Department of Physiology",
+      "Department of Psychiatry",
+      "Department of Public Health",
+      "Department of Surgery",
+      "Other"
+    ],
+    "Faculty of Science": [
+      "Department of Chemistry",
+      "Department of Industrial Management",
+      "Department of Mathematics",
+      "Department of Microbiology",
+      "Department of Physics & Electronics",
+      "Department of Plant & Molecular Biology",
+      "Department of Statistics & Computer Science",
+      "Department of Zoology & Environmental Management",
+      "Other"
+    ],
+    "Faculty of Social Sciences": [
+      "Department of Criminology & Criminal Justice",
+      "Department of Economics",
+      "Department of Geography",
+      "Department of History",
+      "Department of International Studies",
+      "Department of Library & Information Science",
+      "Department of Mass Communication",
+      "Department of Philosophy",
+      "Department of Political Science",
+      "Department of Psychology",
+      "Department of Social Statistics",
+      "Department of Social Work",
+      "Department of Sociology",
+      "Department of Sport Science & Physical Education",
+      "Other"
+    ]
+  };
+
+  const regFacultySelect = document.getElementById('regFaculty');
+  const regDeptSelect = document.getElementById('regDept');
+
+  if (regFacultySelect && regDeptSelect) {
+    regFacultySelect.addEventListener('change', () => {
+      const selectedFaculty = regFacultySelect.value;
+      const depts = facultyDeptData[selectedFaculty] || [];
+      
+      regDeptSelect.innerHTML = '<option value="" disabled selected>Select Department</option>';
+      depts.forEach(dept => {
+        const option = document.createElement('option');
+        option.value = dept;
+        option.textContent = dept;
+        regDeptSelect.appendChild(option);
+      });
+      
+      regDeptSelect.disabled = false;
+    });
+  }
+
+  // --- 1. Apple-style Scroll Reveal System ---
+  const revealElements = document.querySelectorAll('.reveal');
+  
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        // Once visible, stop observing to keep visible
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1, // trigger when 10% of card is in viewport
+    rootMargin: '0px 0px -50px 0px' // offset slightly for smoother arrival
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // Blur character entry animation for Hero Title on load
+  const titleEl = document.querySelector('.hero-title-main');
+  if (titleEl) {
+    const text = titleEl.textContent;
+    titleEl.innerHTML = '';
+    text.split(' ').forEach((word, index) => {
+      const wordSpan = document.createElement('span');
+      wordSpan.style.whiteSpace = 'nowrap';
+      
+      word.split('').forEach((char, charIdx) => {
+        const charSpan = document.createElement('span');
+        charSpan.textContent = char;
+        // Stagger every single character animation
+        charSpan.style.animationDelay = `${(index * 120) + (charIdx * 25)}ms`;
+        wordSpan.appendChild(charSpan);
+      });
+
+      titleEl.appendChild(wordSpan);
+      // Append spaces between words
+      titleEl.appendChild(document.createTextNode(' '));
+    });
+  }
+
+  // --- 2. Countdown Timer ---
+  // Target deadline: August 10, 2026 (local timeline)
+  const targetDate = new Date('August 10, 2026 23:59:59').getTime();
+
+  const updateCountdown = () => {
+    const now = new Date().getTime();
+    const difference = targetDate - now;
+
+    if (difference <= 0) {
+      document.querySelector('.countdown-container').innerHTML = `
+        <div class="countdown-title">Registration Closed</div>
+        <div style="font-size: 1.1rem; font-weight: 600; color: var(--primary-orange); margin-top:0.5rem;">The Hackathon has officially kicked off!</div>
+      `;
+      return;
+    }
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    document.getElementById('days').textContent = String(days).padStart(2, '0');
+    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+  };
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // --- 3. Scroll Header styling ---
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // --- 4. Interactive Accordion (Scoring Criteria) ---
+  const accordionItems = document.querySelectorAll('.score-accordion-item');
+  accordionItems.forEach(item => {
+    const header = item.querySelector('.score-accordion-header');
+    header.addEventListener('click', () => {
+      // Toggle current
+      const isActive = item.classList.contains('active');
+      
+      // Close all others
+      accordionItems.forEach(otherItem => otherItem.classList.remove('active'));
+      
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // --- 5. Interactive Modal (Login/Register Portal) ---
+  const portalModal = document.getElementById('portalModal');
+  const openPortalBtns = document.querySelectorAll('.open-portal-btn');
+  const closePortalBtn = document.getElementById('closePortalBtn');
+  const tabLogin = document.getElementById('tabLogin');
+  const tabRegister = document.getElementById('tabRegister');
+  const paneLogin = document.getElementById('paneLogin');
+  const paneRegister = document.getElementById('paneRegister');
+
+  const openModal = (tab = 'login') => {
+    portalModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    switchTab(tab);
+  };
+
+  const closeModal = () => {
+    portalModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+    resetForms();
+  };
+
+  const switchTab = (tab) => {
+    if (tab === 'login') {
+      tabLogin.classList.add('active');
+      tabRegister.classList.remove('active');
+      paneLogin.classList.add('active');
+      paneRegister.classList.remove('active');
+    } else {
+      tabLogin.classList.remove('active');
+      tabRegister.classList.add('active');
+      paneLogin.classList.remove('active');
+      paneRegister.classList.add('active');
+    }
+    resetForms();
+  };
+
+  openPortalBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetTab = btn.getAttribute('data-tab') || 'login';
+      openModal(targetTab);
+    });
+  });
+
+  closePortalBtn.addEventListener('click', closeModal);
+  portalModal.addEventListener('click', (e) => {
+    if (e.target === portalModal) closeModal();
+  });
+
+  tabLogin.addEventListener('click', () => switchTab('login'));
+  tabRegister.addEventListener('click', () => switchTab('register'));
+
+  // --- 6. Form Dynamics (Team Size & Member Fields) ---
+  const segmentBtns = document.querySelectorAll('.segment-btn');
+  const memberFieldsContainer = document.getElementById('memberFieldsContainer');
+  let selectedTeamSize = 1;
+
+  segmentBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      segmentBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedTeamSize = parseInt(btn.getAttribute('data-size'));
+      updateMemberFields();
+    });
+  });
+
+  const updateMemberFields = () => {
+    memberFieldsContainer.innerHTML = '';
+    // Size 1 needs no extra member names. Size 2 needs 1 extra. Size 3 needs 2 extra.
+    if (selectedTeamSize > 1) {
+      const heading = document.createElement('label');
+      heading.className = 'form-label';
+      heading.style.marginTop = '1rem';
+      heading.textContent = 'Team Member Information';
+      memberFieldsContainer.appendChild(heading);
+
+      for (let i = 2; i <= selectedTeamSize; i++) {
+        const row = document.createElement('div');
+        row.className = 'form-row';
+        row.innerHTML = `
+          <div class="form-group">
+            <input type="text" class="form-input member-name" placeholder="Member ${i} Full Name" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-input member-sid" placeholder="Member ${i} Student ID" required>
+          </div>
+        `;
+        memberFieldsContainer.appendChild(row);
+      }
+    }
+  };
+
+  // --- 7. Supabase Operations ---
+  const loginForm = document.getElementById('loginForm');
+  const registerForm = document.getElementById('registerForm');
+  
+  const loginMsg = document.getElementById('loginMsg');
+  const registerMsg = document.getElementById('registerMsg');
+  
+  const loginBtnText = document.getElementById('loginBtnText');
+  const loginSpinner = document.getElementById('loginSpinner');
+  const registerBtnText = document.getElementById('registerBtnText');
+  const registerSpinner = document.getElementById('registerSpinner');
+
+  const registerSuccessOverlay = document.getElementById('registerSuccessOverlay');
+  const registerFormContent = document.getElementById('registerFormContent');
+
+  const resetForms = () => {
+    loginForm.reset();
+    registerForm.reset();
+    loginMsg.className = 'form-message';
+    loginMsg.style.display = 'none';
+    registerMsg.className = 'form-message';
+    registerMsg.style.display = 'none';
+    registerFormContent.style.display = 'block';
+    registerSuccessOverlay.classList.remove('active');
+    selectedTeamSize = 1;
+    segmentBtns.forEach((b, idx) => {
+      if (idx === 0) b.classList.add('active');
+      else b.classList.remove('active');
+    });
+    updateMemberFields();
+  };
+
+  // Check login state on launch
+  const checkSession = async () => {
+    if (typeof supabaseClient === 'undefined') return;
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    if (session) {
+      updateUIForLoggedInUser(session.user);
+    }
+  };
+
+  const updateUIForLoggedInUser = (user) => {
+    // Modify "Register Now" CTAs to "My Dashboard" or "Account Profile"
+    const portalBtns = document.querySelectorAll('.open-portal-btn');
+    portalBtns.forEach(btn => {
+      btn.textContent = 'Dashboard';
+      btn.removeAttribute('data-tab');
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Welcome back, ' + (user.email) + '! Dashboard features are coming soon.');
+      });
+    });
+  };
+
+  // Login Logic
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    loginMsg.style.display = 'none';
+    loginBtnText.textContent = 'Authenticating...';
+    loginSpinner.style.display = 'inline-block';
+    loginForm.querySelector('button').disabled = true;
+
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value;
+
+    try {
+      if (typeof supabaseClient === 'undefined') {
+        throw new Error('Supabase SDK is not loaded. Please verify configuration.');
+      }
+
+      const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+
+      if (error) throw error;
+
+      loginMsg.textContent = 'Login successful! Redirecting...';
+      loginMsg.className = 'form-message success';
+      loginMsg.style.display = 'block';
+
+      setTimeout(() => {
+        closeModal();
+        updateUIForLoggedInUser(data.user);
+      }, 1500);
+
+    } catch (err) {
+      loginMsg.textContent = err.message || 'An error occurred during sign-in.';
+      loginMsg.className = 'form-message error';
+      loginMsg.style.display = 'block';
+    } finally {
+      loginBtnText.textContent = 'Sign In';
+      loginSpinner.style.display = 'none';
+      loginForm.querySelector('button').disabled = false;
+    }
+  });
+
+  // Registration Logic
+  registerForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    registerMsg.style.display = 'none';
+    registerBtnText.textContent = 'Registering Team...';
+    registerSpinner.style.display = 'inline-block';
+    registerForm.querySelector('button').disabled = true;
+
+    // Core User Info
+    const fullName = document.getElementById('regName').value.trim();
+    const email = document.getElementById('regEmail').value.trim();
+    const password = document.getElementById('regPassword').value;
+    const studentId = document.getElementById('regStudentId').value.trim();
+    const faculty = document.getElementById('regFaculty').value;
+    const department = document.getElementById('regDept').value;
+    const yearOfStudy = document.getElementById('regYear').value;
+
+    // Team Details
+    const teamName = document.getElementById('regTeamName').value.trim();
+    const interestedTools = Array.from(document.querySelectorAll('.tool-checkbox input:checked')).map(cb => cb.value);
+
+    // Dynamic members details
+    const members = [];
+    const memberNameInputs = document.querySelectorAll('.member-name');
+    const memberSidInputs = document.querySelectorAll('.member-sid');
+
+    memberNameInputs.forEach((input, index) => {
+      members.push({
+        name: input.value.trim(),
+        student_id: memberSidInputs[index].value.trim()
+      });
+    });
+
+    try {
+      if (typeof supabaseClient === 'undefined') {
+        throw new Error('Supabase SDK is not loaded. Please verify configuration.');
+      }
+
+      // Step 1: Sign up user using Supabase Auth
+      const { data: authData, error: authError } = await supabaseClient.auth.signUp({
+        email: email,
+        password: password,
+        options: {
+          data: {
+            full_name: fullName,
+            student_id: studentId,
+            faculty: faculty,
+            department: department,
+            year_of_study: yearOfStudy
+          }
+        }
+      });
+
+      if (authError) throw authError;
+
+      const user = authData.user;
+      if (!user) throw new Error('Failed to retrieve registered user context.');
+
+      // Step 2: Write registration entry to database registrations table
+      const { error: dbError } = await supabaseClient.from('registrations').insert([
+        {
+          user_id: user.id,
+          full_name: fullName,
+          student_email: email,
+          student_id: studentId,
+          faculty: faculty,
+          department: department,
+          year_of_study: yearOfStudy,
+          team_name: teamName,
+          team_size: selectedTeamSize,
+          tools_interested: interestedTools
+        }
+      ]);
+
+      if (dbError) {
+        console.error('Database insertion error:', dbError);
+        // Note: auth was successful, but DB insertion failed. We warn but treat as registered or allow retry.
+        throw new Error(`Auth registered, but profile write failed: ${dbError.message}`);
+      }
+
+      // Display animated Success Checkmark Panel
+      registerFormContent.style.display = 'none';
+      registerSuccessOverlay.classList.add('active');
+      document.getElementById('successTeamName').textContent = teamName;
+
+      // Update Header/CTA State
+      setTimeout(() => {
+        closeModal();
+        updateUIForLoggedInUser(user);
+      }, 3500);
+
+    } catch (err) {
+      registerMsg.textContent = err.message || 'An error occurred during registration.';
+      registerMsg.className = 'form-message error';
+      registerMsg.style.display = 'block';
+    } finally {
+      registerBtnText.textContent = 'Register Team';
+      registerSpinner.style.display = 'none';
+      registerForm.querySelector('button').disabled = false;
+    }
+  });
+
+  // --- 8. Scroll-driven Intricate Timeline Tracker ---
+  const timelineProgress = document.getElementById('timelineProgress');
+  const timelineContainer = document.querySelector('.timeline-container');
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  const timelineLaserTail = document.getElementById('timelineLaserTail');
+
+  let lastScrollY = window.scrollY;
+  let lastScrollTimeVal = Date.now();
+  let targetTailHeight = 0;
+  let currentTailHeight = 0;
+  let animationFrameId = null;
+
+  const updateTailPhysics = () => {
+    // Decay target to 0 if scrolling has stopped (no scroll events for > 80ms)
+    if (Date.now() - lastScrollTimeVal > 80) {
+      targetTailHeight = 0;
+    }
+
+    // Ease tail height
+    currentTailHeight += (targetTailHeight - currentTailHeight) * 0.15;
+    
+    if (timelineLaserTail) {
+      timelineLaserTail.style.height = `${currentTailHeight}px`;
+      
+      // Update opacity relative to speed/length
+      if (currentTailHeight > 1.5) {
+        timelineLaserTail.style.opacity = Math.min(0.2 + (currentTailHeight / 80), 0.95);
+      } else {
+        timelineLaserTail.style.opacity = 0;
+      }
+    }
+    
+    // Keep looping if tail is visible or active
+    if (Math.abs(targetTailHeight - currentTailHeight) > 0.1 || currentTailHeight > 0.5) {
+      animationFrameId = requestAnimationFrame(updateTailPhysics);
+    } else {
+      currentTailHeight = 0;
+      if (timelineLaserTail) {
+        timelineLaserTail.style.height = '0px';
+        timelineLaserTail.style.opacity = 0;
+      }
+      animationFrameId = null;
+    }
+  };
+
+  const handleTimelineScroll = () => {
+    if (!timelineProgress || !timelineContainer) return;
+
+    const containerRect = timelineContainer.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    
+    // Laser tracking triggers when it enters 60% of viewport height
+    const triggerPoint = viewportHeight * 0.6;
+    
+    let totalHeight = containerRect.height;
+    if (timelineItems.length > 0) {
+      const lastItem = timelineItems[timelineItems.length - 1];
+      const lastItemDot = lastItem.querySelector('.timeline-dot');
+      if (lastItemDot) {
+        const lastItemDotRect = lastItemDot.getBoundingClientRect();
+        const offset = containerRect.bottom - lastItemDotRect.top - 4;
+        totalHeight -= offset;
+      }
+    }
+    
+    let scrolledDistance = triggerPoint - containerRect.top;
+    let scrollPercent = scrolledDistance / totalHeight;
+    scrollPercent = Math.min(Math.max(scrollPercent, 0), 1);
+    
+    // Set the height of the glowing track
+    timelineProgress.style.height = (scrollPercent * 100) + '%';
+
+    // Calculate Scroll Speed
+    const currentScrollY = window.scrollY;
+    const currentTime = Date.now();
+    const distance = Math.abs(currentScrollY - lastScrollY);
+    const timeDiff = currentTime - lastScrollTimeVal;
+    
+    if (timeDiff > 0 && distance > 0) {
+      const speed = distance / timeDiff; // Pixels per millisecond
+      targetTailHeight = Math.min(speed * 90, 140); // Maximum tail length of 140px
+      
+      lastScrollTimeVal = currentTime;
+      
+      if (!animationFrameId) {
+        animationFrameId = requestAnimationFrame(updateTailPhysics);
+      }
+    }
+    
+    lastScrollY = currentScrollY;
+
+    // Activate the timeline items, dots, and update statuses dynamically
+    timelineItems.forEach(item => {
+      const dotWrapper = item.querySelector('.timeline-dot-wrapper');
+      if (!dotWrapper) return;
+      
+      const dotRect = dotWrapper.getBoundingClientRect();
+      const statusText = item.querySelector('.tech-status');
+      
+      if (dotRect.top <= triggerPoint) {
+        if (!item.classList.contains('active-timeline')) {
+          item.classList.add('active-timeline');
+          if (statusText) {
+            statusText.textContent = '[ STATUS: COMPLETED ]';
+          }
+        }
+      } else {
+        if (item.classList.contains('active-timeline')) {
+          item.classList.remove('active-timeline');
+          if (statusText) {
+            statusText.textContent = '[ STATUS: INACTIVE ]';
+          }
+        }
+      }
+    });
+  };
+
+  const techContainer = document.getElementById('interactiveTechContainer');
+
+  const handleScrollInteractions = () => {
+    handleTimelineScroll();
+    
+    if (techContainer) {
+      const rotation = window.scrollY * 0.06;
+      const scale = 1 + Math.sin(window.scrollY * 0.002) * 0.02;
+      techContainer.style.transform = `rotate(${rotation}deg) scale(${scale})`;
+    }
+  };
+
+  window.addEventListener('scroll', handleScrollInteractions);
+  handleScrollInteractions();
+
+  // Run session check on start
+  checkSession();
+});

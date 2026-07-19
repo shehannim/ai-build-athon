@@ -98,26 +98,31 @@ body {
 /* Custom Futuristic Header */
 header {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1.5rem 5%;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  padding: 1rem 2.5rem;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  border-bottom: 1px solid var(--border-glass);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.03);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 header.scrolled {
-  padding: 0.9rem 5%;
-  background: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid rgba(255, 85, 0, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+  top: 0.8rem;
+  padding: 0.75rem 2.5rem;
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 85, 0, 0.15);
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
 }
 
 .logo-container {
@@ -181,12 +186,14 @@ header.scrolled {
 .nav-links a::after {
   content: '';
   position: absolute;
-  bottom: -4px;
-  left: 0;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 0;
-  height: 1px;
-  background: var(--primary-blue);
-  transition: width 0.3s ease;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--primary-orange);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-links a:hover {
@@ -195,6 +202,17 @@ header.scrolled {
 
 .nav-links a:hover::after {
   width: 100%;
+}
+
+.menu-btn {
+  display: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.menu-btn:hover {
+  transform: scale(1.1);
+  color: var(--primary-orange);
 }
 
 .cta-button {
@@ -1617,8 +1635,37 @@ footer::before {
     margin-bottom: 2.5rem;
   }
   
-  .nav-links, .header-actions {
+  header {
+    width: 95%;
+    top: 1rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
   
   .about-container {

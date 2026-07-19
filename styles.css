@@ -972,34 +972,51 @@ header.scrolled {
   box-shadow: 0 20px 45px rgba(255, 85, 0, 0.12);
 }
 
-/* Custom floating deal-and-settle animation for prize cards */
+/* Custom swooping deal-and-settle animation for prize cards */
 .prize-card.reveal {
   opacity: 0;
-  transform: translateY(180px) rotate(-4deg) scale(0.92);
   filter: blur(8px);
   transition: 
-    opacity 1.3s var(--spring-bezier), 
-    transform 1.3s var(--spring-bezier), 
+    opacity 1.4s var(--spring-bezier), 
+    transform 1.4s var(--spring-bezier), 
     filter 1s ease-out;
 }
 
-.prize-card.reveal:nth-child(1) {
-  transform: translateY(160px) rotate(-5deg) scale(0.92);
+@media (min-width: 769px) {
+  /* Left card: swoops from left-bottom with counter-clockwise tilt */
+  .prize-card.reveal:nth-child(1) {
+    transform: translateX(-240px) translateY(120px) rotate(-12deg) scale(0.9);
+  }
+  /* Center card: swoops up from bottom straight, delayed */
+  .prize-card.reveal:nth-child(2) {
+    transform: translateY(240px) rotate(0deg) scale(0.85);
+    transition-delay: 0.12s;
+  }
+  /* Right card: swoops from right-bottom with clockwise tilt */
+  .prize-card.reveal:nth-child(3) {
+    transform: translateX(240px) translateY(120px) rotate(12deg) scale(0.9);
+    transition-delay: 0.24s;
+  }
 }
 
-.prize-card.reveal:nth-child(2) {
-  transform: translateY(220px) rotate(0deg) scale(0.9);
-  transition-delay: 0.1s;
-}
-
-.prize-card.reveal:nth-child(3) {
-  transform: translateY(160px) rotate(5deg) scale(0.92);
-  transition-delay: 0.2s;
+@media (max-width: 768px) {
+  /* On mobile: swoop up straight to avoid off-screen horizontal overflows */
+  .prize-card.reveal:nth-child(1) {
+    transform: translateY(120px) scale(0.92);
+  }
+  .prize-card.reveal:nth-child(2) {
+    transform: translateY(150px) scale(0.9);
+    transition-delay: 0.08s;
+  }
+  .prize-card.reveal:nth-child(3) {
+    transform: translateY(120px) scale(0.92);
+    transition-delay: 0.16s;
+  }
 }
 
 .prize-card.reveal.active {
   opacity: 1;
-  transform: translateY(0) rotate(0deg) scale(1);
+  transform: translateX(0) translateY(0) rotate(0deg) scale(1);
   filter: blur(0);
 }
 

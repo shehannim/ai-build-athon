@@ -1757,8 +1757,10 @@ footer::before {
   }
 
   .footer-logos {
-    flex-direction: column !important;
-    gap: 1.8rem !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 1rem !important;
   }
 
   .footer-logos .logo-separator {

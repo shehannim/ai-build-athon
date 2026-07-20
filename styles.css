@@ -126,24 +126,67 @@ header {
   max-width: 1200px;
   padding: 1rem 2.5rem;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50px;
-  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.03);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: transparent;
+  border: none !important;
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.03);
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.5); /* Default glass border color */
+  clip-path: polygon(
+    12px 0%,
+    calc(100% - 12px) 0%,
+    100% 12px,
+    100% calc(100% - 12px),
+    calc(100% - 12px) 100%,
+    12px 100%,
+    0% calc(100% - 12px),
+    0% 12px
+  );
+  z-index: -2;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  clip-path: polygon(
+    11px 0%,
+    calc(100% - 11px) 0%,
+    100% 11px,
+    100% calc(100% - 11px),
+    calc(100% - 11px) 100%,
+    11px 100%,
+    0% calc(100% - 11px),
+    0% 11px
+  );
+  z-index: -1;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 header.scrolled {
   top: 0.8rem;
   padding: 0.75rem 2.5rem;
-  background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(255, 85, 0, 0.15);
   box-shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
+}
+
+header.scrolled::before {
+  background: rgba(255, 85, 0, 0.15); /* Scrolled accent border */
+}
+
+header.scrolled::after {
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .logo-container {
@@ -238,39 +281,62 @@ header.scrolled {
 
 .cta-button {
   background: transparent;
-  border: 1px solid var(--primary-orange);
   color: var(--primary-orange) !important;
   padding: 0.6rem 1.4rem;
-  border-radius: 50px;
   font-weight: 600 !important;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-family: var(--font-heading);
   transition: all 0.3s var(--cubic-bezier) !important;
   position: relative;
-  overflow: hidden;
+  border: none !important;
 }
 
 .cta-button::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: var(--primary-orange);
+  clip-path: polygon(
+    6px 0%,
+    calc(100% - 6px) 0%,
+    100% 6px,
+    100% calc(100% - 6px),
+    calc(100% - 6px) 100%,
+    6px 100%,
+    0% calc(100% - 6px),
+    0% 6px
+  );
+  z-index: -2;
+  transition: all 0.3s var(--cubic-bezier);
+}
+
+.cta-button::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: rgba(255, 255, 255, 0.95);
+  clip-path: polygon(
+    5.5px 0%,
+    calc(100% - 5.5px) 0%,
+    100% 5.5px,
+    100% calc(100% - 5.5px),
+    calc(100% - 5.5px) 100%,
+    5.5px 100%,
+    0% calc(100% - 5.5px),
+    0% 5.5px
+  );
   z-index: -1;
-  transition: left 0.3s var(--cubic-bezier);
+  transition: all 0.3s var(--cubic-bezier);
 }
 
 .cta-button:hover {
   color: #fff !important;
-  box-shadow: 0 0 15px var(--glow-orange);
   transform: translateY(-1px);
 }
 
-.cta-button:hover::before {
-  left: 0;
+.cta-button:hover::after {
+  background: var(--primary-orange);
 }
 
 .header-actions {
@@ -311,20 +377,37 @@ header.scrolled {
 
 /* Glowing cyberpunk badge */
 .badge {
-  background: rgba(255, 85, 0, 0.05);
-  border: 1px solid var(--primary-blue);
   color: var(--primary-blue);
-  padding: 0.5rem 1.2rem;
-  border-radius: 50px;
+  padding: 0.5rem 1.4rem;
   font-size: 0.8rem;
   font-weight: 700;
   font-family: var(--font-mono);
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
   margin-bottom: 2rem;
   display: inline-block;
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 15px rgba(255, 85, 0, 0.15);
+  position: relative;
+  background: transparent;
+  border: none !important;
+}
+
+.badge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--primary-orange); /* Border color */
+  clip-path: polygon(8px 0%, calc(100% - 8px) 0%, 100% 50%, calc(100% - 8px) 100%, 8px 100%, 0% 50%);
+  z-index: -2;
+}
+
+.badge::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: rgba(255, 255, 255, 0.95); /* Inside fill */
+  clip-path: polygon(7.5px 0%, calc(100% - 7.5px) 0%, 100% 50%, calc(100% - 7.5px) 100%, 7.5px 100%, 0% 50%);
+  z-index: -1;
 }
 
 .hero-title {
@@ -377,7 +460,6 @@ header.scrolled {
 /* Redesigned Codesprint Cyber Buttons */
 .btn-primary, .btn-secondary {
   padding: 0.9rem 2.2rem;
-  border-radius: 50px;
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 1px;
@@ -387,33 +469,79 @@ header.scrolled {
   transition: all 0.3s var(--cubic-bezier);
   text-decoration: none;
   display: inline-block;
+  position: relative;
+  border: none !important;
+}
+
+.btn-primary::before, .btn-secondary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--primary-orange);
+  clip-path: polygon(
+    8px 0%,
+    calc(100% - 8px) 0%,
+    100% 8px,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    8px 100%,
+    0% calc(100% - 8px),
+    0% 8px
+  );
+  z-index: -2;
+  transition: all 0.3s var(--cubic-bezier);
+}
+
+.btn-primary::after, .btn-secondary::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  clip-path: polygon(
+    7.5px 0%,
+    calc(100% - 7.5px) 0%,
+    100% 7.5px,
+    100% calc(100% - 7.5px),
+    calc(100% - 7.5px) 100%,
+    7.5px 100%,
+    0% calc(100% - 7.5px),
+    0% 7.5px
+  );
+  z-index: -1;
+  transition: all 0.3s var(--cubic-bezier);
 }
 
 .btn-primary {
-  background: var(--primary-orange);
   color: #fff;
-  border: 1px solid var(--primary-orange);
-  box-shadow: 0 4px 20px rgba(255, 85, 0, 0.2);
+}
+
+.btn-primary::after {
+  background: var(--primary-orange);
 }
 
 .btn-primary:hover {
-  background: transparent;
   color: var(--primary-orange);
-  box-shadow: 0 0 25px rgba(255, 85, 0, 0.4);
   transform: translateY(-2px);
+}
+
+.btn-primary:hover::after {
+  background: transparent;
 }
 
 .btn-secondary {
-  background: transparent;
   color: var(--primary-orange);
-  border: 1px solid var(--primary-orange);
+}
+
+.btn-secondary::after {
+  background: transparent;
 }
 
 .btn-secondary:hover {
-  background: var(--primary-orange);
   color: #fff;
-  box-shadow: 0 0 25px rgba(255, 85, 0, 0.4);
   transform: translateY(-2px);
+}
+
+.btn-secondary:hover::after {
+  background: var(--primary-orange);
 }
 
 /* Codesprint Dashboard Countdown */
@@ -870,10 +998,47 @@ header.scrolled {
   font-size: 0.65rem;
   font-weight: 700;
   color: var(--text-muted);
-  border: 1px solid var(--border-glass);
-  padding: 1px 5px;
+  padding: 2px 7px;
+  background: transparent;
+  border: none !important;
+  transition: all 0.3s ease;
+}
+
+.timeline-phase::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--border-glass);
+  clip-path: polygon(
+    4px 0%,
+    calc(100% - 4px) 0%,
+    100% 4px,
+    100% calc(100% - 4px),
+    calc(100% - 4px) 100%,
+    4px 100%,
+    0% calc(100% - 4px),
+    0% 4px
+  );
+  z-index: -2;
+  transition: all 0.3s ease;
+}
+
+.timeline-phase::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
   background: var(--bg-dark);
-  border-radius: 10px;
+  clip-path: polygon(
+    3.5px 0%,
+    calc(100% - 3.5px) 0%,
+    100% 3.5px,
+    100% calc(100% - 3.5px),
+    calc(100% - 3.5px) 100%,
+    3.5px 100%,
+    0% calc(100% - 3.5px),
+    0% 3.5px
+  );
+  z-index: -1;
   transition: all 0.3s ease;
 }
 
@@ -954,9 +1119,12 @@ header.scrolled {
 }
 
 .timeline-item.active-timeline .timeline-phase {
-  border-color: var(--primary-orange);
   color: var(--primary-orange);
   text-shadow: 0 0 8px var(--glow-orange);
+}
+
+.timeline-item.active-timeline .timeline-phase::before {
+  background: var(--primary-orange);
 }
 
 .timeline-item.active-timeline .timeline-content {
@@ -1490,11 +1658,8 @@ header.scrolled {
 /* Cyber submit buttons */
 .submit-btn {
   width: 100%;
-  background: var(--primary-orange);
   color: #fff;
-  border: none;
   padding: 1.1rem;
-  border-radius: 6px;
   font-weight: 700;
   font-family: var(--font-heading);
   font-size: 1rem;
@@ -1502,24 +1667,75 @@ header.scrolled {
   letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 85, 0, 0.25);
   margin-top: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  position: relative;
+  border: none !important;
+  background: transparent;
+}
+
+.submit-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--primary-orange);
+  clip-path: polygon(
+    8px 0%,
+    calc(100% - 8px) 0%,
+    100% 8px,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    8px 100%,
+    0% calc(100% - 8px),
+    0% 8px
+  );
+  z-index: -2;
+  transition: all 0.3s ease;
+}
+
+.submit-btn::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--primary-orange);
+  clip-path: polygon(
+    7.5px 0%,
+    calc(100% - 7.5px) 0%,
+    100% 7.5px,
+    100% calc(100% - 7.5px),
+    calc(100% - 7.5px) 100%,
+    7.5px 100%,
+    0% calc(100% - 7.5px),
+    0% 7.5px
+  );
+  z-index: -1;
+  transition: all 0.3s ease;
 }
 
 .submit-btn:hover {
-  box-shadow: 0 0 25px rgba(255, 85, 0, 0.45);
   transform: translateY(-2px);
+  color: var(--primary-orange);
+}
+
+.submit-btn:hover::after {
+  background: transparent;
 }
 
 .submit-btn:disabled {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border-glass);
   color: var(--text-muted);
   cursor: not-allowed;
+  transform: none;
+}
+
+.submit-btn:disabled::before {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.submit-btn:disabled::after {
+  background: rgba(255, 255, 255, 0.02);
   box-shadow: none;
   transform: none;
 }
@@ -1668,6 +1884,13 @@ footer::before {
     top: 1rem;
     padding: 0.8rem 1.5rem;
     border-radius: 12px;
+    clip-path: none !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    border: 1px solid var(--border-glass) !important;
+  }
+
+  header::before, header::after {
+    display: none !important;
   }
 
   .menu-btn {

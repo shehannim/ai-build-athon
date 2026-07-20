@@ -565,18 +565,18 @@
             <!-- Part 1: Primary Lead details -->
             <div class="form-group">
               <label class="form-label" for="regName">Full Name (Lead Builder)</label>
-              <input type="text" id="regName" class="form-input" placeholder="Dilshan Perera" required>
+              <input type="text" id="regName" class="form-input" placeholder="Enter your full name" required>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="regEmail">Email Address</label>
-              <input type="email" id="regEmail" class="form-input" placeholder="dilshan@example.com" required>
+              <input type="email" id="regEmail" class="form-input" placeholder="Enter your email address" required>
             </div>
 
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="regStudentId">Student ID / Reg No</label>
-                <input type="text" id="regStudentId" class="form-input" placeholder="IM/2022/xxx" required>
+                <input type="text" id="regStudentId" class="form-input" placeholder="Enter your Student ID / Reg No" required>
               </div>
               <div class="form-group">
                 <label class="form-label" for="regFaculty">Faculty</label>
@@ -614,7 +614,7 @@
             <div class="form-row" style="margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1.5rem;">
               <div class="form-group">
                 <label class="form-label" for="regTeamName">Team Name</label>
-                <input type="text" id="regTeamName" class="form-input" placeholder="ByteForce" required>
+                <input type="text" id="regTeamName" class="form-input" placeholder="Enter your team name" required>
               </div>
               <div class="form-group">
                 <label class="form-label">Team Size</label>
@@ -662,54 +662,50 @@
   <!-- Footer Section -->
   <footer>
     <div class="footer-content">
+      <!-- Main Event Logo Centered on Top -->
+      <img src="assets/event-logo.png" alt="AI Buildathon" style="height: 45px; width: auto; display: block; margin: 0 auto 1.5rem;">
+
+      <!-- Subtitle and Description in the Middle -->
+      <p class="footer-subtitle" style="font-size: 1.15rem; font-weight: 500; color: rgba(255,255,255,0.85); margin: 0 auto 0.8rem; max-width: 650px; line-height: 1.4;">
+        Sri Lanka's premier national AI challenge for undergraduates across all universities.
+      </p>
+      <p class="footer-orgs" style="font-size: 0.85rem; color: rgba(255,255,255,0.5); max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.6;">
+        Organized by the Industrial Management Science Students' Association (IMSSA), University of Kelaniya<br>
+        in partnership with Alibaba Cloud.
+      </p>
+
+      <!-- Partner Logos Strip at the Bottom -->
       <div class="footer-logos">
-        <!-- Real Event Logo -->
-        <span class="logo-item" style="display:flex; align-items:center;">
-          <img src="assets/event-logo.png" alt="AI Buildathon" style="height: 32px; width: auto; display: block;">
-        </span>
-        
-        <div class="logo-separator" style="height:20px; width:1px; background:rgba(255,255,255,0.15); margin:0;"></div>
-        
-        <!-- Alibaba Cloud Partner Badge -->
-        <span class="logo-item" title="Alibaba Cloud International" style="display:flex; flex-direction:column; line-height:1.1; text-align:left; gap:4px;">
-          <span style="font-size:0.55rem; font-weight:700; color:rgba(255,255,255,0.4); font-family:var(--font-mono); text-transform:uppercase; letter-spacing:0.5px;">In Partnership With</span>
-          <img src="assets/alibaba-cloud-logo.png" alt="Alibaba Cloud" style="height: 18px; width: auto; display: block;">
-        </span>
-        
-        <div class="logo-separator" style="height:20px; width:1px; background:rgba(255,255,255,0.15); margin:0;"></div>
-        <!-- UOK Crest Logo (Official) -->
-        <span class="logo-item" title="University of Kelaniya" style="display:flex; align-items:center; gap:0.6rem;">
-          <img src="assets/uok-crest.png" alt="University of Kelaniya" style="height: 38px; width: auto; display: block;">
-          <span style="font-family: var(--font-heading); font-weight:700; font-size:0.85rem; color:#fff; letter-spacing:0.5px;">University of Kelaniya</span>
-        </span>
-        
-        <div class="logo-separator" style="height:20px; width:1px; background:rgba(255,255,255,0.15); margin:0;"></div>
-        
-        <!-- IMSSA Logo (Official) -->
-        <span class="logo-item" title="IMSSA" style="display:flex; align-items:center;">
-          <img src="assets/imssa-logo.png" alt="IMSSA" style="height: 38px; width: auto; display: block;">
-        </span>
-        
-        <div class="logo-separator" style="height:20px; width:1px; background:rgba(255,255,255,0.15); margin:0;"></div>
-        
-        <!-- MIT / IT Department Badge (Official) -->
         <span class="logo-item" title="Department of Industrial Management" style="display:flex; align-items:center;">
           <img src="assets/mit-it-logo.png" alt="MIT & IT Degree Programmes" style="height: 35px; width: auto; display: block;">
         </span>
         
-        <div class="logo-separator" style="height:20px; width:1px; background:rgba(255,255,255,0.15); margin:0;"></div>
+        <div class="logo-separator"></div>
         
-        <!-- AI@IM Logo / Text Badge -->
+        <span class="logo-item" title="IMSSA" style="display:flex; align-items:center;">
+          <img src="assets/imssa-logo.png" alt="IMSSA" style="height: 38px; width: auto; display: block;">
+        </span>
+        
+        <div class="logo-separator"></div>
+
+        <span class="logo-item" title="University of Kelaniya" style="display:flex; align-items:center;">
+          <img src="assets/uok-crest.png" alt="University of Kelaniya" style="height: 38px; width: auto; display: block;">
+        </span>
+        
+        <div class="logo-separator"></div>
+
+        <span class="logo-item" title="Alibaba Cloud" style="display:flex; align-items:center;">
+          <img src="assets/alibaba-cloud-logo.png" alt="Alibaba Cloud" style="height: 18px; width: auto; display: block;">
+        </span>
+        
+        <div class="logo-separator"></div>
+        
         <span class="logo-item" title="AI@IM" style="display:flex; flex-direction:column; line-height:1.1; text-align:left;">
           <span style="font-family: var(--font-heading); font-weight:800; font-size:1.15rem; color:#fff; letter-spacing:0.5px;">AI@IM</span>
           <span style="font-size:0.75rem; font-weight:500; color:rgba(255,255,255,0.6); font-family:var(--font-body);">University of Kelaniya</span>
         </span>
       </div>
-      <p class="footer-orgs">
-        Organized by the Industrial Management Science Students' Association (IMSSA)<br>
-        Department of Industrial Management · Faculty of Science<br>
-        University of Kelaniya, Sri Lanka
-      </p>
+
       <p class="footer-credits">
         &copy; 2026 AI Build-athon. Powered by Alibaba Cloud International. All rights reserved.
       </p>

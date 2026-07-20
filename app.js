@@ -1,4 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // --- Initialize Lenis Smooth Scroll ---
+  const lenis = new Lenis({
+    duration: 1.1,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // spring deceleration
+    smooth: true,
+    infinite: false
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+
+  // Smooth scroll to anchors with offset for the floating navbar
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const target = document.querySelector(targetId);
+      if (target) {
+        lenis.scrollTo(target, {
+          offset: -80, // Offset for navbar height
+          duration: 1.2
+        });
+      }
+    });
+  });
+
   // --- Faculty & Department Dynamic Data ---
   const facultyDeptData = {
     "Faculty of Commerce & Management Studies": [

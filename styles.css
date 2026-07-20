@@ -1,5 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rajdhani:wght@400;500;600;700;800&display=swap');
 
+/* Lenis Smooth Scroll Configuration */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 :root {
   --primary-orange: #FF5500;
   --primary-blue: #FF8800; /* Re-mapped blue to secondary orange for full color unification */
@@ -833,15 +854,17 @@ header.scrolled {
 /* Cyber timeline node wrapper */
 .timeline-dot-wrapper {
   position: absolute;
-  left: -4.3rem; /* Align perfectly centered with timeline bar */
-  top: 0.8rem;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
+  left: calc(5px - 3rem); /* Centers exactly on the vertical timeline bar line */
+  top: 1.6rem;
   z-index: 3;
 }
 
 .timeline-phase {
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
   font-family: var(--font-mono);
   font-size: 0.65rem;
   font-weight: 700;
@@ -854,6 +877,10 @@ header.scrolled {
 }
 
 .timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 8px;
   height: 8px;
   background: var(--bg-dark);
@@ -922,7 +949,7 @@ header.scrolled {
   box-shadow: 
     0 0 10px var(--primary-orange),
     0 0 20px var(--primary-orange);
-  transform: scale(1.3);
+  transform: translate(-50%, -50%) scale(1.3);
 }
 
 .timeline-item.active-timeline .timeline-phase {

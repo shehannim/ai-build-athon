@@ -1060,6 +1060,10 @@ header.scrolled {
     transform: translateY(120px) scale(0.92);
     transition-delay: 0.16s;
   }
+
+  .prize-card:nth-child(1) { order: 2; } /* Runner-Up */
+  .prize-card:nth-child(2) { order: 1; } /* Champion */
+  .prize-card:nth-child(3) { order: 3; } /* 2nd Runner-Up */
 }
 
 .prize-card.reveal.active {
@@ -1614,8 +1618,11 @@ footer::before {
 
 .footer-logos {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
 }
 
 .footer-orgs {
@@ -1747,6 +1754,21 @@ footer::before {
   .hero-ctas .btn-secondary {
     width: 100%;
     text-align: center;
+  }
+
+  .footer-logos {
+    flex-direction: column !important;
+    gap: 1.8rem !important;
+  }
+
+  .footer-logos .logo-separator {
+    display: none !important;
+  }
+
+  .footer-logos .logo-item {
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
   }
 }
 

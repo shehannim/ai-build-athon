@@ -772,10 +772,11 @@ header.scrolled {
 
 .timeline-bar {
   position: absolute;
-  left: 5px;
+  left: 1.5rem;
+  transform: translateX(-50%);
   top: 0;
   bottom: 0;
-  width: 2px;
+  width: 4px;
   background: rgba(0, 0, 0, 0.08); /* Dim background track for light mode */
 }
 
@@ -854,7 +855,7 @@ header.scrolled {
 /* Cyber timeline node wrapper */
 .timeline-dot-wrapper {
   position: absolute;
-  left: calc(9px - 3rem); /* Centers exactly on the vertical timeline bar line */
+  left: -1.5rem; /* Centers exactly on the vertical timeline bar line */
   top: 1.6rem;
   z-index: 3;
 }

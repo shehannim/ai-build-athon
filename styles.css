@@ -1616,13 +1616,21 @@ footer::before {
   text-align: center;
 }
 
-.footer-logos {
+.footer-logos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.footer-logos-row {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2.5rem;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
 }
 
 .footer-orgs {
@@ -1756,18 +1764,22 @@ footer::before {
     text-align: center;
   }
 
-  .footer-logos {
+  .footer-logos-container {
+    gap: 1.2rem !important;
+  }
+
+  .footer-logos-row {
     flex-direction: row !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
-    gap: 1rem !important;
+    gap: 1.2rem !important;
   }
 
-  .footer-logos .logo-separator {
+  .footer-logos-row .logo-separator {
     display: none !important;
   }
 
-  .footer-logos .logo-item {
+  .footer-logos-row .logo-item {
     justify-content: center !important;
     align-items: center !important;
     text-align: center !important;

@@ -362,16 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const updateUIForLoggedInUser = (user) => {
-    // Modify "Register Now" CTAs to "My Dashboard" or "Account Profile"
-    const portalBtns = document.querySelectorAll('.open-portal-btn');
-    portalBtns.forEach(btn => {
-      btn.textContent = 'Dashboard';
-      btn.removeAttribute('data-tab');
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        alert('Welcome back, ' + (user.email) + '! Dashboard features are coming soon.');
-      });
-    });
+    // Keep CTAs as "Register Team" so logged-in users can open the registration form!
   };
 
   // Login Logic

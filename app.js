@@ -228,19 +228,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- 5. Interactive Modal (Login/Register Portal) ---
+  // --- 5. Interactive Modal (Register Portal) ---
   const portalModal = document.getElementById('portalModal');
   const openPortalBtns = document.querySelectorAll('.open-portal-btn');
   const closePortalBtn = document.getElementById('closePortalBtn');
-  const tabLogin = document.getElementById('tabLogin');
-  const tabRegister = document.getElementById('tabRegister');
-  const paneLogin = document.getElementById('paneLogin');
-  const paneRegister = document.getElementById('paneRegister');
 
-  const openModal = (tab = 'login') => {
+  const openModal = () => {
     portalModal.classList.add('active');
     document.body.style.overflow = 'hidden';
-    switchTab(tab);
   };
 
   const closeModal = () => {
@@ -249,26 +244,10 @@ document.addEventListener('DOMContentLoaded', () => {
     resetForms();
   };
 
-  const switchTab = (tab) => {
-    if (tab === 'login') {
-      tabLogin.classList.add('active');
-      tabRegister.classList.remove('active');
-      paneLogin.classList.add('active');
-      paneRegister.classList.remove('active');
-    } else {
-      tabLogin.classList.remove('active');
-      tabRegister.classList.add('active');
-      paneLogin.classList.remove('active');
-      paneRegister.classList.add('active');
-    }
-    resetForms();
-  };
-
   openPortalBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const targetTab = btn.getAttribute('data-tab') || 'login';
-      openModal(targetTab);
+      openModal();
     });
   });
 
@@ -276,9 +255,6 @@ document.addEventListener('DOMContentLoaded', () => {
   portalModal.addEventListener('click', (e) => {
     if (e.target === portalModal) closeModal();
   });
-
-  tabLogin.addEventListener('click', () => switchTab('login'));
-  tabRegister.addEventListener('click', () => switchTab('register'));
 
   // --- 6. Form Dynamics (Team Size & Member Fields) ---
   const segmentBtns = document.querySelectorAll('.segment-btn');
@@ -321,14 +297,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // --- 7. Supabase Operations ---
-  const loginForm = document.getElementById('loginForm');
   const registerForm = document.getElementById('registerForm');
-  
-  const loginMsg = document.getElementById('loginMsg');
   const registerMsg = document.getElementById('registerMsg');
-  
-  const loginBtnText = document.getElementById('loginBtnText');
-  const loginSpinner = document.getElementById('loginSpinner');
   const registerBtnText = document.getElementById('registerBtnText');
   const registerSpinner = document.getElementById('registerSpinner');
 
@@ -336,10 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const registerFormContent = document.getElementById('registerFormContent');
 
   const resetForms = () => {
-    loginForm.reset();
     registerForm.reset();
-    loginMsg.className = 'form-message';
-    loginMsg.style.display = 'none';
     registerMsg.className = 'form-message';
     registerMsg.style.display = 'none';
     registerFormContent.style.display = 'block';
@@ -365,46 +332,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Keep CTAs as "Register Team" so logged-in users can open the registration form!
   };
 
-  // Login Logic
-  loginForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    loginMsg.style.display = 'none';
-    loginBtnText.textContent = 'Authenticating...';
-    loginSpinner.style.display = 'inline-block';
-    loginForm.querySelector('button').disabled = true;
-
-    const email = document.getElementById('loginEmail').value.trim();
-    const password = document.getElementById('loginPassword').value;
-
-    try {
-      if (typeof supabaseClient === 'undefined') {
-        throw new Error('Supabase SDK is not loaded. Please verify configuration.');
-      }
-
-      const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
-
-      if (error) throw error;
-
-      loginMsg.textContent = 'Login successful! Redirecting...';
-      loginMsg.className = 'form-message success';
-      loginMsg.style.display = 'block';
-
-      setTimeout(() => {
-        closeModal();
-        updateUIForLoggedInUser(data.user);
-      }, 1500);
-
-    } catch (err) {
-      loginMsg.textContent = err.message || 'An error occurred during sign-in.';
-      loginMsg.className = 'form-message error';
-      loginMsg.style.display = 'block';
-    } finally {
-      loginBtnText.textContent = 'Sign In';
-      loginSpinner.style.display = 'none';
-      loginForm.querySelector('button').disabled = false;
-    }
-  });
-
   // Registration Logic
   registerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -416,7 +343,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Core User Info
     const fullName = document.getElementById('regName').value.trim();
     const email = document.getElementById('regEmail').value.trim();
-    const password = document.getElementById('regPassword').value;
+    // Generate a secure random password in the background
+    const password = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
     const studentId = document.getElementById('regStudentId').value.trim();
     const faculty = document.getElementById('regFaculty').value;
     const department = document.getElementById('regDept').value;

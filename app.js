@@ -211,22 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- 4. Interactive Accordion (Scoring Criteria) ---
-  const accordionItems = document.querySelectorAll('.score-accordion-item');
-  accordionItems.forEach(item => {
-    const header = item.querySelector('.score-accordion-header');
-    header.addEventListener('click', () => {
-      // Toggle current
-      const isActive = item.classList.contains('active');
-      
-      // Close all others
-      accordionItems.forEach(otherItem => otherItem.classList.remove('active'));
-      
-      if (!isActive) {
-        item.classList.add('active');
-      }
-    });
-  });
+
 
   // --- 5. Interactive Modal (Register Portal) ---
   const portalModal = document.getElementById('portalModal');

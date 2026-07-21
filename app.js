@@ -550,6 +550,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.addEventListener('scroll', handleScrollInteractions);
+  // Hook into Lenis scroll events for reliable mobile support
+  // (Lenis may suppress native scroll events on touch devices)
+  lenis.on('scroll', handleScrollInteractions);
+  // Touchmove fallback for extra mobile coverage
+  window.addEventListener('touchmove', handleScrollInteractions, { passive: true });
   handleScrollInteractions();
 
   // Run session check on start

@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Build-athon | Alibaba Cloud & University of Kelaniya</title>
-  <meta name="description" content="Official registration portal for the AI Build-athon 2026 co-organized by Alibaba Cloud International and University of Kelaniya (Department of Industrial Management). Form teams, build AI prototypes using Qoder, QoderWork & MuleRun, and win big.">
-  
+  <meta name="description"
+    content="Official registration portal for the AI Build-athon 2026 co-organized by Alibaba Cloud International and University of Kelaniya (Department of Industrial Management). Form teams, build AI prototypes using Qoder, QoderWork & MuleRun, and win big.">
+
   <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <!-- Background Glowing Blobs -->
   <div class="glow-bg"></div>
@@ -30,35 +33,46 @@
     </ul>
     <div class="menu-btn" id="mobileMenuBtn">
       <!-- Simple hamburger icon -->
-      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero" id="home" style="position: relative; overflow: hidden;">
-    <canvas id="heroParticles" style="position: absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1;"></canvas>
+    <canvas id="heroParticles"
+      style="position: absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1;"></canvas>
     <div class="hero-banner-container" style="z-index:0;">
       <img src="assets/hero-banner.jpg" alt="AI Build-athon Hands Intertwining with Glowing Orange Energy Line">
     </div>
-    <span class="badge" style="z-index:2; position:relative; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.2rem; text-transform: none;">
-      <img src="assets/AI@IM.png" alt="AI@IM" style="height: 22px; width: auto; display: block;">
+    <span class="badge"
+      style="z-index:2; position:relative; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.2rem; text-transform: none;">
+      <img src="assets/AI@IM2.png" alt="AI@IM" style="height: 18px; width: auto; display: block;">
       <span style="width: 1px; height: 12px; background: rgba(255, 85, 0, 0.25);"></span>
-      <img src="assets/AI@IM2.png" alt="AI@IM University of Kelaniya" style="height: 18px; width: auto; display: block;">
-      <span style="width: 1px; height: 12px; background: rgba(255, 85, 0, 0.25);"></span>
-      <span style="font-size: 0.7rem; font-weight: 700; color: var(--primary-orange); letter-spacing: 1.5px; text-transform: uppercase;">University of Kelaniya</span>
+      <span
+        style="font-size: 0.7rem; font-weight: 700; color: var(--primary-orange); letter-spacing: 1.5px; text-transform: uppercase;">University
+        of Kelaniya</span>
     </span>
     <h1 class="hero-title" style="z-index:2; position:relative;">
       <span class="hero-title-main">AI</span> <span class="gradient-text">Buildathon.</span>
     </h1>
-    <p class="hero-subtitle" style="font-family: var(--font-mono); letter-spacing: 2px; text-transform: uppercase; font-size: 1.5rem; color: var(--primary-orange); margin-bottom: 0.5rem; position:relative; z-index:2;">
+    <p class="hero-subtitle"
+      style="font-family: var(--font-mono); letter-spacing: 2px; text-transform: uppercase; font-size: 1.5rem; color: var(--primary-orange); margin-bottom: 0.5rem; position:relative; z-index:2;">
       Build. Learn. Compete.
     </p>
-    <div style="display: flex; align-items: center; gap: 0.6rem; justify-content: center; margin: 0 auto 2.5rem; position: relative; z-index: 2;">
-      <span style="font-family: var(--font-body); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 3px; color: var(--text-secondary); line-height: 1;">Powered by</span>
-      <img src="assets/alibaba-cloud-logo.png" alt="Alibaba Cloud" style="height: 22px; width: auto; display: block; mix-blend-mode: multiply;">
+    <div
+      style="display: flex; align-items: center; gap: 0.6rem; justify-content: center; margin: 0 auto 2.5rem; position: relative; z-index: 2;">
+      <span
+        style="font-family: var(--font-body); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 3px; color: var(--text-secondary); line-height: 1;">Powered
+        by</span>
+      <img src="assets/alibaba-cloud-logo.png" alt="Alibaba Cloud"
+        style="height: 22px; width: auto; display: block; mix-blend-mode: multiply;">
     </div>
-    <p class="hero-subtitle" style="margin-top: 0; max-width: 650px; margin-bottom: 3.5rem; position:relative; z-index:2;">
-      Join the AI Buildathon and turn your ideas into real-world solutions. Learn, build, and compete using industry-grade tools, no prior experience needed.
+    <p class="hero-subtitle"
+      style="margin-top: 0; max-width: 650px; margin-bottom: 3.5rem; position:relative; z-index:2;">
+      Join the AI Buildathon and turn your ideas into real-world solutions. Learn, build, and compete using
+      industry-grade tools, no prior experience needed.
     </p>
     <div class="hero-ctas" style="position:relative; z-index:2;">
       <a href="#" class="btn-primary open-portal-btn" data-tab="register">Register Team</a>
@@ -93,11 +107,15 @@
   <section class="quick-facts" id="about">
     <div class="about-container">
       <div class="about-left">
-        <div class="reveal" style="margin-bottom: 4rem;">
+        <div class="reveal" style="margin-bottom: 4rem; text-align: center;">
           <span class="section-label">Overview</span>
           <h2 class="section-title">An online sprint to ship AI-powered solutions</h2>
-          <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; text-align: justify;">
-            The AI Buildathon is a two-week, fully online innovation sprint for University of Kelaniya students. Throughout the event, you'll explore modern tools, collaborate in small teams, and build a working prototype that solves real-world problems across any industry. Whether it's a video generator, mobile app, enterprise system, or public platform, if technology is at its core, it belongs here.
+          <p
+            style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; text-align: justify; max-width: 860px; margin: 0 auto;">
+            The AI Buildathon is a two-week, fully online innovation sprint for University of Kelaniya students.
+            Throughout the event, you'll explore modern tools, collaborate in small teams, and build a working prototype
+            that solves real-world problems across any industry. Whether it's a video generator, mobile app, enterprise
+            system, or public platform, if technology is at its core, it belongs here.
           </p>
         </div>
 
@@ -105,7 +123,10 @@
           <!-- Card 1 -->
           <div class="fact-card reveal stagger-1">
             <div class="fact-icon">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path
+                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
             </div>
             <h3 class="fact-title">Format</h3>
             <p class="fact-desc">Conducted entirely online with mentorship workshops.</p>
@@ -114,7 +135,10 @@
           <!-- Card 2 -->
           <div class="fact-card reveal stagger-2">
             <div class="fact-icon">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path
+                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
             </div>
             <h3 class="fact-title">Team Size</h3>
             <p class="fact-desc">Build alone or collaborate in groups of up to three.</p>
@@ -125,7 +149,8 @@
 
       <!-- Right Side: Morphing 3D Particle Sphere Canvas -->
       <div class="about-right reveal stagger-3" style="display: flex; justify-content: center; align-items: center;">
-        <div class="interactive-tech-container" id="interactiveTechContainer" style="width: 100%; max-width: 380px; aspect-ratio: 1; margin: 0 auto; position: relative;">
+        <div class="interactive-tech-container" id="interactiveTechContainer"
+          style="width: 100%; max-width: 380px; aspect-ratio: 1; margin: 0 auto; position: relative;">
           <canvas id="aboutVisualCanvas" style="width: 100%; height: 100%; display: block; cursor: grab;"></canvas>
         </div>
       </div>
@@ -153,26 +178,30 @@
           </div>
         </div>
         <!-- Qoder Vector Mockup -->
-        <div class="tool-preview-svg" style="height: 120px; background: rgba(0,0,0,0.02); border-bottom: 1px solid var(--border-glass); padding: 1.5rem; display: flex; justify-content: center; align-items: center;">
+        <div class="tool-preview-svg"
+          style="height: 120px; background: rgba(0,0,0,0.02); border-bottom: 1px solid var(--border-glass); padding: 1.5rem; display: flex; justify-content: center; align-items: center;">
           <svg viewBox="0 0 240 100" width="100%" height="100%">
-            <rect x="10" y="5" width="220" height="90" rx="4" fill="var(--bg-dark-secondary)" stroke="var(--border-glass)" stroke-width="1.2"/>
-            <circle cx="24" cy="18" r="3" fill="#ff5f56"/>
-            <circle cx="34" cy="18" r="3" fill="#ffbd2e"/>
-            <circle cx="44" cy="18" r="3" fill="#27c93f"/>
-            <rect x="20" y="32" width="60" height="6" rx="2" fill="var(--text-muted)" opacity="0.4"/>
-            <rect x="20" y="44" width="120" height="6" rx="2" fill="var(--primary-orange)" opacity="0.8"/>
-            <rect x="35" y="56" width="90" height="6" rx="2" fill="var(--text-secondary)" opacity="0.6"/>
-            <rect x="35" y="68" width="130" height="6" rx="2" fill="var(--primary-orange)"/>
-            <rect x="20" y="80" width="40" height="6" rx="2" fill="var(--text-muted)" opacity="0.4"/>
+            <rect x="10" y="5" width="220" height="90" rx="4" fill="var(--bg-dark-secondary)"
+              stroke="var(--border-glass)" stroke-width="1.2" />
+            <circle cx="24" cy="18" r="3" fill="#ff5f56" />
+            <circle cx="34" cy="18" r="3" fill="#ffbd2e" />
+            <circle cx="44" cy="18" r="3" fill="#27c93f" />
+            <rect x="20" y="32" width="60" height="6" rx="2" fill="var(--text-muted)" opacity="0.4" />
+            <rect x="20" y="44" width="120" height="6" rx="2" fill="var(--primary-orange)" opacity="0.8" />
+            <rect x="35" y="56" width="90" height="6" rx="2" fill="var(--text-secondary)" opacity="0.6" />
+            <rect x="35" y="68" width="130" height="6" rx="2" fill="var(--primary-orange)" />
+            <rect x="20" y="80" width="40" height="6" rx="2" fill="var(--text-muted)" opacity="0.4" />
             <g transform="translate(180, 68)">
-              <path d="M 0,-8 L 2,-2 L 8,0 L 2,2 L 0,8 L -2,2 L -8,0 L -2,-2 Z" fill="var(--primary-orange)"/>
-              <circle cx="0" cy="0" r="14" stroke="var(--primary-orange)" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
+              <path d="M 0,-8 L 2,-2 L 8,0 L 2,2 L 0,8 L -2,2 L -8,0 L -2,-2 Z" fill="var(--primary-orange)" />
+              <circle cx="0" cy="0" r="14" stroke="var(--primary-orange)" stroke-width="1" stroke-dasharray="2 3"
+                opacity="0.5" />
             </g>
           </svg>
         </div>
         <div class="tool-body">
           <p>
-            An AI-native developer portal, CLI interface, and JetBrains utility. Write, refactor, and test applications securely using Quest Mode, Experts engine, and spec-driven structures.
+            An AI-native developer portal, CLI interface, and JetBrains utility. Write, refactor, and test applications
+            securely using Quest Mode, Experts engine, and spec-driven structures.
           </p>
           <div class="tool-footer-tag">Real Software Development</div>
         </div>
@@ -188,30 +217,38 @@
           </div>
         </div>
         <!-- QoderWork Vector Mockup -->
-        <div class="tool-preview-svg" style="height: 120px; background: rgba(0,0,0,0.02); border-bottom: 1px solid var(--border-glass); padding: 1.5rem; display: flex; justify-content: center; align-items: center;">
+        <div class="tool-preview-svg"
+          style="height: 120px; background: rgba(0,0,0,0.02); border-bottom: 1px solid var(--border-glass); padding: 1.5rem; display: flex; justify-content: center; align-items: center;">
           <svg viewBox="0 0 240 100" width="100%" height="100%">
             <g transform="translate(15, 15)">
-              <rect x="0" y="15" width="50" height="30" rx="3" fill="var(--bg-dark-secondary)" stroke="var(--primary-orange)" stroke-width="1.5"/>
-              <text x="25" y="33" font-size="7" font-weight="700" fill="var(--text-primary)" text-anchor="middle" font-family="var(--font-heading)">TRIGGER</text>
-              <path d="M 50 30 L 75 30" stroke="var(--text-muted)" stroke-width="1.5" stroke-dasharray="3 3"/>
-              <path d="M 75 30 L 70 27 M 75 30 L 70 33" stroke="var(--text-muted)" stroke-width="1.5"/>
-              
-              <rect x="75" y="15" width="50" height="30" rx="3" fill="var(--bg-dark-secondary)" stroke="var(--text-primary)" stroke-width="1.2"/>
-              <text x="100" y="33" font-size="7" font-weight="700" fill="var(--text-primary)" text-anchor="middle" font-family="var(--font-heading)">ACTION</text>
-              <path d="M 125 30 L 150 30" stroke="var(--text-muted)" stroke-width="1.5" stroke-dasharray="3 3"/>
-              <path d="M 150 30 L 145 27 M 150 30 L 145 33" stroke="var(--text-muted)" stroke-width="1.5"/>
-              
-              <rect x="150" y="15" width="55" height="30" rx="3" fill="var(--bg-dark-secondary)" stroke="var(--primary-orange)" stroke-width="1.5"/>
-              <text x="177" y="33" font-size="7" font-weight="700" fill="var(--primary-orange)" text-anchor="middle" font-family="var(--font-heading)">RESOLVED</text>
-              
-              <path d="M 25 45 C 25 65, 177 65, 177 45" fill="none" stroke="var(--primary-orange)" stroke-width="1.5"/>
-              <circle cx="101" cy="59" r="4" fill="var(--primary-orange)"/>
+              <rect x="0" y="15" width="50" height="30" rx="3" fill="var(--bg-dark-secondary)"
+                stroke="var(--primary-orange)" stroke-width="1.5" />
+              <text x="25" y="33" font-size="7" font-weight="700" fill="var(--text-primary)" text-anchor="middle"
+                font-family="var(--font-heading)">TRIGGER</text>
+              <path d="M 50 30 L 75 30" stroke="var(--text-muted)" stroke-width="1.5" stroke-dasharray="3 3" />
+              <path d="M 75 30 L 70 27 M 75 30 L 70 33" stroke="var(--text-muted)" stroke-width="1.5" />
+
+              <rect x="75" y="15" width="50" height="30" rx="3" fill="var(--bg-dark-secondary)"
+                stroke="var(--text-primary)" stroke-width="1.2" />
+              <text x="100" y="33" font-size="7" font-weight="700" fill="var(--text-primary)" text-anchor="middle"
+                font-family="var(--font-heading)">ACTION</text>
+              <path d="M 125 30 L 150 30" stroke="var(--text-muted)" stroke-width="1.5" stroke-dasharray="3 3" />
+              <path d="M 150 30 L 145 27 M 150 30 L 145 33" stroke="var(--text-muted)" stroke-width="1.5" />
+
+              <rect x="150" y="15" width="55" height="30" rx="3" fill="var(--bg-dark-secondary)"
+                stroke="var(--primary-orange)" stroke-width="1.5" />
+              <text x="177" y="33" font-size="7" font-weight="700" fill="var(--primary-orange)" text-anchor="middle"
+                font-family="var(--font-heading)">RESOLVED</text>
+
+              <path d="M 25 45 C 25 65, 177 65, 177 45" fill="none" stroke="var(--primary-orange)" stroke-width="1.5" />
+              <circle cx="101" cy="59" r="4" fill="var(--primary-orange)" />
             </g>
           </svg>
         </div>
         <div class="tool-body">
           <p>
-            Automate desktop and code tasks on the fly. Plan, execute, edit files, script browsers, and coordinate modular workflows in an isolated sandbox tailored for multi-step task resolution.
+            Automate desktop and code tasks on the fly. Plan, execute, edit files, script browsers, and coordinate
+            modular workflows in an isolated sandbox tailored for multi-step task resolution.
           </p>
           <div class="tool-footer-tag">Provided to all Teams</div>
         </div>
@@ -227,33 +264,42 @@
           </div>
         </div>
         <!-- MuleRun Vector Mockup -->
-        <div class="tool-preview-svg" style="height: 120px; background: rgba(0,0,0,0.02); border-bottom: 1px solid var(--border-glass); padding: 1.5rem; display: flex; justify-content: center; align-items: center;">
+        <div class="tool-preview-svg"
+          style="height: 120px; background: rgba(0,0,0,0.02); border-bottom: 1px solid var(--border-glass); padding: 1.5rem; display: flex; justify-content: center; align-items: center;">
           <svg viewBox="0 0 240 100" width="100%" height="100%">
             <g transform="translate(30, 50)">
-              <path d="M -30 0 A 30 30 0 0 1 30 0" fill="none" stroke="var(--text-muted)" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
-              <path d="M -30 0 A 30 30 0 0 1 10 -25" fill="none" stroke="var(--primary-orange)" stroke-width="4.5" stroke-linecap="round"/>
-              <line x1="0" y1="0" x2="8" y2="-20" stroke="var(--text-primary)" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="0" cy="0" r="3" fill="var(--text-primary)"/>
-              <text x="0" y="18" font-size="8" font-weight="700" fill="var(--primary-orange)" text-anchor="middle" font-family="var(--font-heading)">98.5ms</text>
+              <path d="M -30 0 A 30 30 0 0 1 30 0" fill="none" stroke="var(--text-muted)" stroke-width="4"
+                stroke-linecap="round" opacity="0.3" />
+              <path d="M -30 0 A 30 30 0 0 1 10 -25" fill="none" stroke="var(--primary-orange)" stroke-width="4.5"
+                stroke-linecap="round" />
+              <line x1="0" y1="0" x2="8" y2="-20" stroke="var(--text-primary)" stroke-width="2.5"
+                stroke-linecap="round" />
+              <circle cx="0" cy="0" r="3" fill="var(--text-primary)" />
+              <text x="0" y="18" font-size="8" font-weight="700" fill="var(--primary-orange)" text-anchor="middle"
+                font-family="var(--font-heading)">98.5ms</text>
             </g>
             <g transform="translate(135, 15)">
-              <rect x="0" y="5" width="70" height="15" rx="2" fill="var(--bg-dark-secondary)" stroke="var(--border-glass)" stroke-width="1"/>
-              <circle cx="10" cy="12" r="2.5" fill="#27c93f"/>
-              <rect x="22" y="10" width="35" height="4" rx="1" fill="var(--text-muted)" opacity="0.5"/>
-              
-              <rect x="0" y="25" width="70" height="15" rx="2" fill="var(--bg-dark-secondary)" stroke="var(--border-glass)" stroke-width="1"/>
-              <circle cx="10" cy="32" r="2.5" fill="#27c93f"/>
-              <rect x="22" y="30" width="35" height="4" rx="1" fill="var(--text-muted)" opacity="0.5"/>
-              
-              <rect x="0" y="45" width="70" height="15" rx="2" fill="var(--bg-dark-secondary)" stroke="var(--primary-orange)" stroke-width="1.2"/>
-              <circle cx="10" cy="52" r="2.5" fill="var(--primary-orange)"/>
-              <rect x="22" y="50" width="35" height="4" rx="1" fill="var(--primary-orange)" opacity="0.8"/>
+              <rect x="0" y="5" width="70" height="15" rx="2" fill="var(--bg-dark-secondary)"
+                stroke="var(--border-glass)" stroke-width="1" />
+              <circle cx="10" cy="12" r="2.5" fill="#27c93f" />
+              <rect x="22" y="10" width="35" height="4" rx="1" fill="var(--text-muted)" opacity="0.5" />
+
+              <rect x="0" y="25" width="70" height="15" rx="2" fill="var(--bg-dark-secondary)"
+                stroke="var(--border-glass)" stroke-width="1" />
+              <circle cx="10" cy="32" r="2.5" fill="#27c93f" />
+              <rect x="22" y="30" width="35" height="4" rx="1" fill="var(--text-muted)" opacity="0.5" />
+
+              <rect x="0" y="45" width="70" height="15" rx="2" fill="var(--bg-dark-secondary)"
+                stroke="var(--primary-orange)" stroke-width="1.2" />
+              <circle cx="10" cy="52" r="2.5" fill="var(--primary-orange)" />
+              <rect x="22" y="50" width="35" height="4" rx="1" fill="var(--primary-orange)" opacity="0.8" />
             </g>
           </svg>
         </div>
         <div class="tool-body">
           <p>
-            Instantly run, scale, and publish workflow networks. Connect complex APIs, models, databases, and structured inputs into robust, shareable environments.
+            Instantly run, scale, and publish workflow networks. Connect complex APIs, models, databases, and structured
+            inputs into robust, shareable environments.
           </p>
           <div class="tool-footer-tag">Cloud Credits Available</div>
         </div>
@@ -285,9 +331,12 @@
           <div class="timeline-dot"></div>
         </div>
         <div class="timeline-content">
-          <div class="timeline-content-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
+          <div class="timeline-content-header"
+            style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
             <div class="timeline-date" style="margin-bottom:0;">July 20, 2026</div>
-            <div class="tech-status" style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:1px; color:var(--text-muted);">[ STATUS: INACTIVE ]</div>
+            <div class="tech-status"
+              style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:1px; color:var(--text-muted);">[
+              STATUS: INACTIVE ]</div>
           </div>
           <h3 class="timeline-title">Registration Opens</h3>
           <ul class="timeline-details">
@@ -304,9 +353,12 @@
           <div class="timeline-dot"></div>
         </div>
         <div class="timeline-content">
-          <div class="timeline-content-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
+          <div class="timeline-content-header"
+            style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
             <div class="timeline-date" style="margin-bottom:0;">August 10, 2026</div>
-            <div class="tech-status" style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:1px; color:var(--text-muted);">[ STATUS: INACTIVE ]</div>
+            <div class="tech-status"
+              style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:1px; color:var(--text-muted);">[
+              STATUS: INACTIVE ]</div>
           </div>
           <h3 class="timeline-title">Registration Deadline</h3>
           <ul class="timeline-details">
@@ -323,9 +375,12 @@
           <div class="timeline-dot"></div>
         </div>
         <div class="timeline-content">
-          <div class="timeline-content-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
+          <div class="timeline-content-header"
+            style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
             <div class="timeline-date" style="margin-bottom:0;">August 10 – 14, 2026</div>
-            <div class="tech-status" style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:1px; color:var(--text-muted);">[ STATUS: INACTIVE ]</div>
+            <div class="tech-status"
+              style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:1px; color:var(--text-muted);">[
+              STATUS: INACTIVE ]</div>
           </div>
           <h3 class="timeline-title">Hackathon Kick-Off Session (2 Hr)</h3>
           <ul class="timeline-details">
@@ -342,9 +397,12 @@
           <div class="timeline-dot"></div>
         </div>
         <div class="timeline-content">
-          <div class="timeline-content-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
+          <div class="timeline-content-header"
+            style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
             <div class="timeline-date" style="margin-bottom:0;">August 14 – 27, 2026</div>
-            <div class="tech-status" style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:1px; color:var(--text-muted);">[ STATUS: INACTIVE ]</div>
+            <div class="tech-status"
+              style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:1px; color:var(--text-muted);">[
+              STATUS: INACTIVE ]</div>
           </div>
           <h3 class="timeline-title">Submission Window Open (2 Weeks)</h3>
           <ul class="timeline-details">
@@ -361,9 +419,12 @@
           <div class="timeline-dot"></div>
         </div>
         <div class="timeline-content">
-          <div class="timeline-content-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
+          <div class="timeline-content-header"
+            style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
             <div class="timeline-date" style="margin-bottom:0;">September 1 – 15, 2026</div>
-            <div class="tech-status" style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:1px; color:var(--text-muted);">[ STATUS: INACTIVE ]</div>
+            <div class="tech-status"
+              style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:1px; color:var(--text-muted);">[
+              STATUS: INACTIVE ]</div>
           </div>
           <h3 class="timeline-title">Evaluation & Final Pitching Session</h3>
           <ul class="timeline-details">
@@ -441,18 +502,24 @@
   <div class="portal-modal" id="portalModal">
     <div class="portal-card">
       <button class="close-portal-btn" id="closePortalBtn" aria-label="Close modal">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13.5 4.5l-9 9m0-9l9 9"/></svg>
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M13.5 4.5l-9 9m0-9l9 9" />
+        </svg>
       </button>
 
       <!-- REGISTER PANE -->
       <div class="portal-pane active" id="paneRegister">
         <div id="registerSuccessOverlay" class="success-overlay">
           <div class="checkmark-circle">
-            <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+            <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+              <path d="M5 13l4 4L19 7" />
+            </svg>
           </div>
           <h3 class="portal-title" style="color: #10b981;">Roster Registered!</h3>
-          <p class="portal-sub" style="margin-bottom:0.5rem;">Congratulations, team <strong id="successTeamName" style="color: var(--primary-orange);"></strong>!</p>
-          <p style="color: var(--text-secondary); font-size: 0.9rem;">Your team profile has been successfully registered. Check your inbox for confirmation details.</p>
+          <p class="portal-sub" style="margin-bottom:0.5rem;">Congratulations, team <strong id="successTeamName"
+              style="color: var(--primary-orange);"></strong>!</p>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">Your team profile has been successfully
+            registered. Check your inbox for confirmation details.</p>
         </div>
 
         <div id="registerFormContent">
@@ -476,13 +543,15 @@
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="regStudentId">Student ID / Reg No</label>
-                <input type="text" id="regStudentId" class="form-input" placeholder="Enter your Student ID / Reg No" required>
+                <input type="text" id="regStudentId" class="form-input" placeholder="Enter your Student ID / Reg No"
+                  required>
               </div>
               <div class="form-group">
                 <label class="form-label" for="regFaculty">Faculty</label>
                 <select id="regFaculty" class="form-input" required>
                   <option value="" disabled selected>Select Faculty</option>
-                  <option value="Faculty of Commerce & Management Studies">Faculty of Commerce & Management Studies</option>
+                  <option value="Faculty of Commerce & Management Studies">Faculty of Commerce & Management Studies
+                  </option>
                   <option value="Faculty of Computing and Technology">Faculty of Computing and Technology</option>
                   <option value="Faculty of Humanities">Faculty of Humanities</option>
                   <option value="Faculty of Medicine">Faculty of Medicine</option>
@@ -511,7 +580,8 @@
             </div>
 
             <!-- Part 2: Team details -->
-            <div class="form-row" style="margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1.5rem;">
+            <div class="form-row"
+              style="margin-top: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1.5rem;">
               <div class="form-group">
                 <label class="form-label" for="regTeamName">Team Name</label>
                 <input type="text" id="regTeamName" class="form-input" placeholder="Enter your team name" required>
@@ -545,10 +615,12 @@
   <footer>
     <div class="footer-content">
       <!-- Main Event Logo Centered on Top -->
-      <img src="assets/event-logo-light.png" alt="AI Buildathon" style="height: 45px; width: auto; display: block; margin: 0 auto 1.5rem;">
+      <img src="assets/event-logo-light.png" alt="AI Buildathon"
+        style="height: 45px; width: auto; display: block; margin: 0 auto 1.5rem;">
 
       <!-- Subtitle and Description in the Middle -->
-      <p class="footer-orgs" style="font-size: 0.85rem; color: rgba(255,255,255,0.5); max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.6;">
+      <p class="footer-orgs"
+        style="font-size: 0.85rem; color: rgba(255,255,255,0.5); max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.6;">
         Organized by the Industrial Management Science Students' Association (IMSSA), University of Kelaniya<br>
         in partnership with Alibaba Cloud.
       </p>
@@ -558,14 +630,15 @@
       <div class="footer-logos">
         <!-- Alibaba Cloud -->
         <span class="logo-item" title="Alibaba Cloud" style="display:flex; align-items:center;">
-          <img src="assets/alibaba-cloud-logo.png" alt="Alibaba Cloud" style="height: 18px; width: auto; display: block;">
+          <img src="assets/alibaba-cloud-logo.png" alt="Alibaba Cloud"
+            style="height: 18px; width: auto; display: block;">
         </span>
-        
+
         <div class="logo-separator"></div>
-        
+
         <!-- AI@IM -->
         <span class="logo-item" title="AI@IM" style="display:flex; align-items:center;">
-          <img src="assets/AI@IM2.png" alt="AI@IM" style="height: 35px; width: auto; display: block;">
+          <img src="assets/AI@IM.png" alt="AI@IM" style="height: 35px; width: auto; display: block;">
         </span>
 
         <!-- Line break element for mobile view wrap -->
@@ -574,21 +647,23 @@
 
         <!-- MIT & IT -->
         <span class="logo-item" title="Department of Industrial Management" style="display:flex; align-items:center;">
-          <img src="assets/mit-it-logo.png" alt="MIT & IT Degree Programmes" style="height: 35px; width: auto; display: block;">
+          <img src="assets/mit-it-logo.png" alt="MIT & IT Degree Programmes"
+            style="height: 35px; width: auto; display: block;">
         </span>
-        
+
         <div class="logo-separator"></div>
-        
+
         <!-- IMSSA -->
         <span class="logo-item" title="IMSSA" style="display:flex; align-items:center;">
           <img src="assets/imssa-logo.png" alt="IMSSA" style="height: 38px; width: auto; display: block;">
         </span>
-        
+
         <div class="logo-separator"></div>
 
         <!-- University of Kelaniya Crest -->
         <span class="logo-item" title="University of Kelaniya" style="display:flex; align-items:center;">
-          <img src="assets/uok-crest.png" alt="University of Kelaniya" style="height: 38px; width: auto; display: block;">
+          <img src="assets/uok-crest.png" alt="University of Kelaniya"
+            style="height: 38px; width: auto; display: block;">
         </span>
       </div>
 
@@ -603,11 +678,12 @@
 
   <!-- Load Supabase Library from CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  
+
   <!-- Supabase Config & Client Initialization -->
   <script src="supabase-config.js"></script>
-  
+
   <!-- Website Interactions and Operations -->
   <script src="app.js"></script>
 </body>
+
 </html>

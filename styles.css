@@ -1821,7 +1821,7 @@ footer::before {
   }
 
   .timeline-dot-wrapper {
-    left: -0.65rem !important;
+    left: -0.5rem !important;
   }
 
   .timeline-content {

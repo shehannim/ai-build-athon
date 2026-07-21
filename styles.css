@@ -494,7 +494,7 @@ header.scrolled {
 
 /* Quick Facts Grid Section */
 .quick-facts {
-  padding: 8rem 5% 8rem;
+  padding: 8rem 5% 2rem;
   position: relative;
 }
 
@@ -572,7 +572,7 @@ header.scrolled {
 .fact-card {
   background: var(--bg-card);
   border: 1px solid var(--border-glass);
-  padding: 3rem 2rem;
+  padding: 1.75rem 1.5rem;
   border-radius: 8px;
   transition: all 0.4s var(--cubic-bezier);
   position: relative;
@@ -597,7 +597,7 @@ header.scrolled {
 }
 
 .fact-icon {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   width: 45px;
   height: 45px;
   border-radius: 6px;
@@ -636,7 +636,7 @@ header.scrolled {
 }
 
 .fact-value {
-  margin-top: 1.5rem;
+  margin-top: 0.75rem;
   font-family: var(--font-mono);
   font-size: 1.5rem;
   font-weight: 700;
@@ -646,7 +646,7 @@ header.scrolled {
 
 /* Toolkit Section styling (Qoder, QoderWork, MuleRun) */
 .toolkit {
-  padding: 8rem 5% 8rem;
+  padding: 2rem 5% 8rem;
   background: linear-gradient(180deg, var(--bg-dark), var(--bg-dark-secondary));
   position: relative;
 }
@@ -1738,12 +1738,17 @@ footer::before {
   }
 
   .close-portal-btn {
-    position: sticky;
-    top: 0;
-    right: 0;
-    float: right;
-    z-index: 10;
-    margin-bottom: 0.5rem;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1100;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 0;
   }
   
   .form-row {
@@ -1816,7 +1821,7 @@ footer::before {
   }
 
   .timeline-dot-wrapper {
-    left: -2rem !important;
+    left: -0.75rem !important;
   }
 
   .timeline-content {
